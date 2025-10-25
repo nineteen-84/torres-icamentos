@@ -30,7 +30,7 @@
 
 ## Identidade Visual
 
-- **Cores predominantes**: Azul escuro, cinza, branco e laranja (transmite segurança e confiança).  
+- **Cores predominantes**: Vermelho, cinza, branco.  
 - **Fontes**:  
   - **Noto Sans**: Para textos e informações gerais.  
   - **Roboto Slab** ou **Montserrat**: Para títulos e destaque visual.  
