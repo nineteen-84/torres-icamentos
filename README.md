@@ -92,3 +92,9 @@
 - **Carrossel**: Projetos e equipamentos destacados.  
 - **Cards**: Serviços e cases resumidos.  
 - **Seções**: Estrutura clara, hierárquica e fácil de navegar.
+
+---
+
+## Referencias 
+
+- https://queirozicamentos.com
