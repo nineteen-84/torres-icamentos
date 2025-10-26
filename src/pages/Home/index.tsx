@@ -1,4 +1,4 @@
-import { Construction, Factory, Settings, Camera, Phone, Mail, MapPin, User } from 'lucide-react';
+import { Construction, Factory, Settings, Camera, Phone, Mail, MapPin, User } from "lucide-react";
 
 export const Home = () => {
   return (
@@ -8,12 +8,24 @@ export const Home = () => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-red-600">Torres Içamentos</div>
           <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="hover:text-red-600 transition">Home</a>
-            <a href="#servicos" className="hover:text-red-600 transition">Serviços</a>
-            <a href="#portfolio" className="hover:text-red-600 transition">Portfólio</a>
-            <a href="#equipe" className="hover:text-red-600 transition">Equipe</a>
-            <a href="#sobre" className="hover:text-red-600 transition">Sobre</a>
-            <a href="#contato" className="hover:text-red-600 transition">Contato</a>
+            <a href="#home" className="hover:text-red-600 transition">
+              Home
+            </a>
+            <a href="#servicos" className="hover:text-red-600 transition">
+              Serviços
+            </a>
+            <a href="#portfolio" className="hover:text-red-600 transition">
+              Portfólio
+            </a>
+            <a href="#equipe" className="hover:text-red-600 transition">
+              Equipe
+            </a>
+            <a href="#sobre" className="hover:text-red-600 transition">
+              Sobre
+            </a>
+            <a href="#contato" className="hover:text-red-600 transition">
+              Contato
+            </a>
           </nav>
           <button className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition">
             Solicitar Orçamento
@@ -29,8 +41,8 @@ export const Home = () => {
               Soluções em <span className="text-red-600">Içamentos</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Especialistas em movimentação de cargas pesadas com 15 anos de experiência. 
-              Segurança, eficiência e confiabilidade em cada projeto.
+              Especialistas em movimentação de cargas pesadas com 15 anos de experiência. Segurança,
+              eficiência e confiabilidade em cada projeto.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-red-600 text-white px-8 py-3 rounded hover:bg-red-700 transition">
@@ -41,7 +53,7 @@ export const Home = () => {
               </button>
             </div>
           </div>
-          
+
           {/* Carrossel de projetos */}
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -50,7 +62,9 @@ export const Home = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">Projeto Industrial ABC</h3>
-                <p className="text-gray-600">Içamento de maquinário pesado em complexo industrial</p>
+                <p className="text-gray-600">
+                  Içamento de maquinário pesado em complexo industrial
+                </p>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -85,21 +99,28 @@ export const Home = () => {
                 <Construction className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">Içamento Pesado</h3>
-              <p className="text-gray-600">Transporte e movimentação de cargas de grande porte com segurança e precisão técnica.</p>
+              <p className="text-gray-600">
+                Transporte e movimentação de cargas de grande porte com segurança e precisão
+                técnica.
+              </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-red-600 rounded-full mb-6 flex items-center justify-center">
                 <Settings className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">Içamento Médio</h3>
-              <p className="text-gray-600">Soluções versáteis para cargas de porte médio em diversos setores industriais.</p>
+              <p className="text-gray-600">
+                Soluções versáteis para cargas de porte médio em diversos setores industriais.
+              </p>
             </div>
             <div className="bg-white p-8 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-red-600 rounded-full mb-6 flex items-center justify-center">
                 <Settings className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">Içamento Especializado</h3>
-              <p className="text-gray-600">Projetos customizados com análise técnica detalhada e equipamentos específicos.</p>
+              <p className="text-gray-600">
+                Projetos customizados com análise técnica detalhada e equipamentos específicos.
+              </p>
             </div>
           </div>
         </div>
@@ -117,7 +138,9 @@ export const Home = () => {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">Projeto Industrial {item}</h3>
-                  <p className="text-gray-600">Içamento de maquinário em fábrica - Setor automotivo</p>
+                  <p className="text-gray-600">
+                    Içamento de maquinário em fábrica - Setor automotivo
+                  </p>
                 </div>
               </div>
             ))}
@@ -163,8 +186,8 @@ export const Home = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-8">Sobre a Torres Içamentos</h2>
           <p className="text-xl text-gray-600 mb-8">
-            A Torres Içamentos atua há 15 anos no mercado, oferecendo soluções seguras e eficientes 
-            em movimentação de cargas. Nossa missão é proporcionar serviços de excelência com 
+            A Torres Içamentos atua há 15 anos no mercado, oferecendo soluções seguras e eficientes
+            em movimentação de cargas. Nossa missão é proporcionar serviços de excelência com
             tecnologia de ponta e equipe altamente qualificada.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
@@ -217,12 +240,35 @@ export const Home = () => {
             </div>
             <div>
               <form className="space-y-4">
-                <input type="text" placeholder="Nome" className="w-full p-3 border border-gray-300 rounded" />
-                <input type="text" placeholder="Empresa" className="w-full p-3 border border-gray-300 rounded" />
-                <input type="tel" placeholder="Telefone" className="w-full p-3 border border-gray-300 rounded" />
-                <input type="email" placeholder="E-mail" className="w-full p-3 border border-gray-300 rounded" />
-                <textarea placeholder="Mensagem" rows={4} className="w-full p-3 border border-gray-300 rounded"></textarea>
-                <button type="submit" className="w-full bg-red-600 text-white py-3 rounded hover:bg-red-700 transition">
+                <input
+                  type="text"
+                  placeholder="Nome"
+                  className="w-full p-3 border border-gray-300 rounded"
+                />
+                <input
+                  type="text"
+                  placeholder="Empresa"
+                  className="w-full p-3 border border-gray-300 rounded"
+                />
+                <input
+                  type="tel"
+                  placeholder="Telefone"
+                  className="w-full p-3 border border-gray-300 rounded"
+                />
+                <input
+                  type="email"
+                  placeholder="E-mail"
+                  className="w-full p-3 border border-gray-300 rounded"
+                />
+                <textarea
+                  placeholder="Mensagem"
+                  rows={4}
+                  className="w-full p-3 border border-gray-300 rounded"
+                ></textarea>
+                <button
+                  type="submit"
+                  className="w-full bg-red-600 text-white py-3 rounded hover:bg-red-700 transition"
+                >
                   Enviar Mensagem
                 </button>
               </form>
@@ -239,4 +285,4 @@ export const Home = () => {
       </footer>
     </div>
   );
-}
+};
