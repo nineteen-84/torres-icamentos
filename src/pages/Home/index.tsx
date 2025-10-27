@@ -1,4 +1,4 @@
-import { Construction, Factory, Settings, Camera, Phone, Mail, MapPin, User } from "lucide-react";
+import { Construction, Factory, Settings, Camera, Phone, Mail, MapPin, Clock, User } from "lucide-react";
 
 export const Home = () => {
   return (
@@ -41,8 +41,7 @@ export const Home = () => {
               Soluções em <span className="text-red-600">Içamentos</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Especialistas em movimentação de cargas pesadas com 15 anos de experiência. Segurança,
-              eficiência e confiabilidade em cada projeto.
+              Içamos seus móveis com precisão, segurança e experiência – cada projeto tratado com cuidado especializado.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-red-600 text-white px-8 py-3 rounded hover:bg-red-700 transition">
@@ -186,9 +185,11 @@ export const Home = () => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold mb-8">Sobre a Torres Içamentos</h2>
           <p className="text-xl text-gray-600 mb-8">
-            A Torres Içamentos atua há 15 anos no mercado, oferecendo soluções seguras e eficientes
-            em movimentação de cargas. Nossa missão é proporcionar serviços de excelência com
-            tecnologia de ponta e equipe altamente qualificada.
+            A <strong>TORRES IÇAMENTOS</strong> trabalha com equipamentos de alta qualidade, sempre visando a segurança de seus funcionários e clientes.
+            Utilizamos uma estrutura que não danifica paredes, janelas, guarda-corpo, parapeitos, portas e qualquer tipo de pisos.
+
+            <p>A missão de nossa empresa é realizar um trabalho de qualidade com segurança.
+            </p>
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div>
@@ -219,14 +220,14 @@ export const Home = () => {
                   <Phone className="w-6 h-6 mr-4 text-red-600" />
                   <div>
                     <p className="font-semibold">Telefone</p>
-                    <p className="text-gray-600">(11) 9999-9999</p>
+                    <p className="text-gray-600">(11) 5925-6665</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-6 h-6 mr-4 text-red-600" />
                   <div>
                     <p className="font-semibold">E-mail</p>
-                    <p className="text-gray-600">contato@torresicamentos.com</p>
+                    <p className="text-gray-600">torresicamentos@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center">
@@ -234,6 +235,13 @@ export const Home = () => {
                   <div>
                     <p className="font-semibold">Endereço</p>
                     <p className="text-gray-600">São Paulo, SP</p>
+                  </div>
+                </div>
+                <div className="flex items-center mt-4">
+                  <Clock className="w-6 h-6 mr-4 text-red-600" />
+                  <div>
+                    <p className="font-semibold">Atendimento</p>
+                    <p className="text-gray-600">Seg a Sex: 9:00 às 18:00</p>
                   </div>
                 </div>
               </div>
