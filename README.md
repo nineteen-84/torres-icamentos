@@ -31,9 +31,9 @@
 ## Identidade Visual
 
 - **Cores predominantes**: Vermelho, cinza, branco.  
-- **Fontes**:  
-  - **Noto Sans**: Para textos e informações gerais.  
-  - **Roboto Slab** ou **Montserrat**: Para títulos e destaque visual.  
+- **Fontes**:
+- **Manrope:** utilizada para textos gerais, descrições e conteúdos operacionais.
+- **IBM Plex Sans** ou **IBM Plex Serif:** aplicadas em títulos, headings e elementos de destaque para transmitir solidez e credibilidade.  
 - **Imagens**: Fotos de equipamentos, operações de içamento e projetos realizados.
 
 ---
@@ -102,3 +102,4 @@
 - https://lidericamentos.com.br
 - https://www.idealicamentos.com.br
 - https://maxicamentos.com.br
+- https://modulex.in/
