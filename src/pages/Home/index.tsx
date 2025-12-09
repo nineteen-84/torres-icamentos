@@ -36,7 +36,7 @@ export const Home = () => {
       {/* Seção de Proteção, Normas e Certificações */}
       <section></section>
 
-      <section id="sobre">.</section>
+      <section id="sobre"></section>
       <section id="parceiros"></section>
       <section id="trabalhos"></section>
       <section id="contato"></section>
