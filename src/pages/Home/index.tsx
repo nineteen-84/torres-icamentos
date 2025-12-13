@@ -34,25 +34,35 @@ export const Home = () => {
       </main>
 
       {/* Seção de Proteção, Normas e Certificações */}
-      <section>
-        <h1>Proteção, Normas e Certificações</h1>
+      <section className="rounded-3xl bg-[#0C0C08] py-[100px]">
+        <h1 className="mb-8 text-center font-source text-[87px]">
+          Proteção, Normas e Certificações
+        </h1>
 
-        <div>
+        <div className="mx-auto grid max-w-6xl grid-cols-3 gap-6">
           <div>
-            <h2>Documento ART</h2>
-            <p>Laudo técnico ART emitido por engenheiro para içamento.</p>
+            <h2 className="mb-4 font-montserrat text-2xl font-bold">Documento ART</h2>
+            <p className="font-inter text-xl">
+              Laudo técnico ART emitido por engenheiro para içamento.
+            </p>
           </div>
 
           <div>
-            <h2>Seguro de Elevação</h2>
-            <p>Termo de responsabilidade para prevenção de acidentes.</p>
+            <h2 className="mb-4 font-montserrat text-2xl font-bold">Seguro de Elevação</h2>
+            <p className="font-inter text-xl">
+              Termo de responsabilidade para prevenção de acidentes.
+            </p>
           </div>
 
           <div>
-            <h2>Certificações de Segurança e Trabalho</h2>
-            <p>
-              NR-35: Certifica profissionais para trabalho em altura. NR-18: Garante segurança e
-              organização na construção civil.
+            <h2 className="mb-4 font-montserrat text-2xl font-bold">
+              Certificações de Segurança e Trabalho
+            </h2>
+            <p className="mb-3 font-inter text-xl">
+              NR-35: Certifica profissionais para trabalho em altura.
+            </p>
+            <p className="font-inter text-xl">
+              NR-18: Garante segurança e organização na construção civil.
             </p>
           </div>
         </div>
@@ -112,23 +122,27 @@ export const Home = () => {
         </button>
       </section>
 
-      <section id="parceiros">
-        <div>
-          <h1>Parceiros</h1>
-          <p>
+      <section
+        id="parceiros"
+        className="h-[800px] bg-[url('/bg-parceiros.png')] bg-cover bg-center bg-no-repeat"
+      >
+        <div className="max-w-3xl pl-[200px] pt-[250px]">
+          <h1 className="mb-6 font-source text-6xl">Parceiros</h1>
+          <p className="mb-6 font-montserrat text-2xl">
             Parcerias fortalecem nossa atuação e ampliam nossa capacidade de oferecer soluções
             seguras e eficientes. Trabalhamos ao lado de empresas que compartilham nossos valores,
             garantindo qualidade em cada etapa do processo.
           </p>
-          <button className="rounded-3xl bg-[#DC143C] px-8 py-2">Seja um Parceiro</button>
-        </div>
-
-        <div>
-          <img src="" alt="" />
-          <img src="" alt="" />
-          <img src="" alt="" />
+          <button className="font-sm rounded-3xl bg-[#DC143C] px-8 py-3 font-inter font-bold hover:bg-[#B01030]">
+            Seja um Parceiro
+          </button>
         </div>
       </section>
+      <div className="grid grid-cols-3 items-center justify-items-center rounded-3xl bg-[#0C0C08] py-[60px]">
+        <img src="rocha_machado.png" alt="" />
+        <img src="lima.png" alt="" />
+        <img src="bazzy.png" alt="" />
+      </div>
 
       <section id="sobre">
         <div>
@@ -170,7 +184,7 @@ export const Home = () => {
         </div>
       </section>
 
-      <section id="contato">
+      <section id="contato" className="bg-[#0C0C08]">
         <div>
           <h2>Solicite um orçamento com nossa equipe</h2>
 
@@ -202,72 +216,94 @@ export const Home = () => {
         </div>
       </section>
 
-      <footer>
-        <div>
-          <img src="" alt="" />
+      <footer className="bg-[url('/footer.png')] bg-cover bg-center">
+        <div className="container mx-auto px-[60px] pb-10 pt-10">
+          <div className="flex flex-col items-center gap-[200px] md:flex-row">
+            <div className="shrink-0">
+              <img src="logo.png" alt="" />
+            </div>
 
-          <div>
-            <div>
-              <h2>Endereço</h2>
-
+            <div className="grid grid-cols-1 gap-20 md:grid-cols-3">
               <div>
-                <span>
-                  <i className="ph ph-map-pin"></i>R Rosa Ruas Dias 20
-                </span>
-
-                <span>
-                  <i className="ph ph-envelope-simple"></i>torresicamentos@gmail.com
-                </span>
+                <h2 className="mb-[16px] font-inter text-lg font-bold">Endereço</h2>
+                <p className="mb-3 flex gap-2 font-inter">
+                  <img src="map.png" alt="" />R Rosa Ruas Dias 20
+                  <br />
+                </p>
+                <p className="flex gap-2 font-inter">
+                  <img src="email.png" alt="" />
+                  torresicamentos@gmail.com
+                </p>
               </div>
-            </div>
-
-            <div>
-              <h2>Sobre</h2>
-              <h2>Trabalhos</h2>
-              <h2>Parcerias</h2>
-              <h2>Documentação</h2>
-              <h2>Início</h2>
-            </div>
-
-            <div>
-              <form action="">
-                <h1>Notificações</h1>
-
-                <div>
-                  <label htmlFor="" id="email">
-                    Email
-                  </label>
-                  <input type="text" id="email" />
-                  <button>Inscrever-se</button>
-                </div>
-              </form>
 
               <div>
-                <h2>Siga-nos</h2>
+                <h2 className="mb-[16px] font-inter text-lg font-bold">Sobre</h2>
+                <ul>
+                  <li className="mb-3 font-inter">
+                    <a href="" className="hover:underline">
+                      Inicio
+                    </a>
+                  </li>
+                  <li className="mb-3 font-inter">
+                    <a href="" className="hover:underline">
+                      Trabalhos
+                    </a>
+                  </li>
+                  <li className="mb-3 font-inter">
+                    <a href="" className="hover:underline">
+                      Parcerias
+                    </a>
+                  </li>
+                  <li className="mb-3 font-inter">
+                    <a href="" className="hover:underline">
+                      Documentação
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h2 className="mb-[16px] font-inter text-lg font-bold">Notificações</h2>
+                <form action="" className="mb-3">
+                  <div className="">
+                    <label htmlFor="" id="email">
+                      Email
+                    </label>
+                    <input type="text" id="email" className="mb-2 mt-2 flex w-[235px] py-1" />
+                    <button className="w-[235px] bg-[#0A84FF] py-1 transition-colors duration-200 hover:bg-[#0070E0]">
+                      Inscrever-se
+                    </button>
+                  </div>
+                </form>
 
                 <div>
-                  <a href="">
-                    <i className="ph ph-facebook-logo"></i>
-                  </a>
-                  <a href="">
-                    <i className="ph ph-paper-plane-tilt"></i>
-                  </a>
-                  <a href="">
-                    <i className="ph ph-instagram-logo"></i>
-                  </a>
+                  <h2 className="mb-3">Siga-nos</h2>
+                  <div className="flex gap-3">
+                    <a href="">
+                      <img src="face.png" alt="" className="h-6 w-6" />
+                    </a>
+                    <a href="">
+                      <img src="insta.png" alt="" className="h-6 w-6" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div>
-          <h3>© 2025 Todos os Direitos Reservados</h3>
-
-          <nav>
-            <a href="">Política de Privacidade</a>
-            <a href="">Termos de uso</a>
-          </nav>
+        <div className="mx-auto px-2 px-[120px]">
+          <div className="flex justify-between gap-4 text-sm">
+            <h3 className="text-sm">© 2025 Todos os Direitos Reservados</h3>
+            <nav className="mb-3 flex gap-6">
+              <a href="" className="hover:underline">
+                Política de Privacidade
+              </a>
+              <a href="" className="hover:underline">
+                Termos de uso
+              </a>
+            </nav>
+          </div>
         </div>
       </footer>
     </Fragment>
