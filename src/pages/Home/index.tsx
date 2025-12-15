@@ -138,10 +138,16 @@ export const Home = () => {
           </button>
         </div>
       </section>
-      <div className="grid grid-cols-3 items-center justify-items-center rounded-3xl bg-[#0C0C08] py-[60px]">
-        <img src="rocha_machado.png" alt="" />
-        <img src="lima.png" alt="" />
-        <img src="bazzy.png" alt="" />
+      <div className="rounded-3xl bg-[#0C0C08] py-[60px]">
+        <div className="flex flex-col items-center justify-center md:flex-row md:gap-14 lg:flex-row lg:gap-20 xl:flex-row xl:gap-[200px]">
+          <img src="rocha_machado.png" alt="" className="h-28 w-auto md:h-20 lg:h-auto xl:h-auto" />
+          <img
+            src="lima.png"
+            alt=""
+            className="mb-24 mt-24 h-32 w-auto md:mb-0 md:mt-0 md:h-28 lg:mb-0 lg:mt-0 lg:h-auto xl:mb-0 xl:mt-0 xl:h-auto"
+          />
+          <img src="bazzy.png" alt="" className="w-auto md:h-28" />
+        </div>
       </div>
 
       <section id="sobre">
