@@ -190,34 +190,196 @@ export const Home = () => {
         </div>
       </section>
 
-      <section id="contato" className="bg-[#0C0C08]">
-        <div>
-          <h2>Solicite um orçamento com nossa equipe</h2>
+      <section id="feedbacks" className="bg-black text-white py-20">
+        <div className="container mx-auto px-4">
+          {/* Cabeçalho da Seção */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-serif font-bold">Feedbacks</h2>
+            <p className="text-gray-400 mt-4 max-w-2xl mx-auto">Confira a opinião de nossos clientes sobre a segurança e eficiência dos nossos serviços</p>
+          </div>
 
-          <div>
-            <form action="">
-              <div>
-                <label htmlFor="name" id="name">
-                  Nome*
-                </label>
-                <input type="text" id="name" name="name" />
+          {/* Container do Carrossel/Imagem Central */}
+          <div className="relative flex items-center justify-center">
+            
+            {/* IMAGEM CENTRALIZADA (Elemento de Fundo) */}
+            <div
+              className="w-full max-w-3xl h-96 bg-gray-700 rounded-xl bg-cover bg-center"
+              style={{ backgroundImage: `url('/icamentofeedback.jpg')` }}
+            />
 
-                <label htmlFor="surname" id="surname">
-                  Nome*
-                </label>
-                <input type="text" id="surname" name="name" />
+            {/* Card de Feedback Central (Posicionado sobre a imagem) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-lg w-full">
+              {/* Avatar */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <div className="w-24 h-24 bg-gray-300 rounded-full border-4 border-white shadow-lg" />
               </div>
 
-              <label htmlFor="email" id="email">
-                Email*
-              </label>
-              <input type="email" id="email" name="email" />
+              {/* Conteúdo do Card */}
+              <div className="bg-white text-gray-800 rounded-xl shadow-2xl pt-16 pb-8 px-8 text-center">
+                <p className="text-gray-600 italic">
+                  "A equipe da Torres Içamentos realizou o serviço com agilidade e atenção aos detalhes, garantindo segurança e confiança em cada etapa. Excelente trabalho."
+                </p>
+                <p className="font-bold text-gray-900 mt-6">
+                  Cliente
+                </p>
+              </div>
+            </div>
 
-              <label htmlFor="descriptiopn" id="descriptiopn">
-                Deixe sua mensagem*
-              </label>
-              <textarea name="descriptiopn" id="descriptiopn" cols={30} rows={10}></textarea>
-            </form>
+          </div>
+        </div>
+      </section>
+
+              {/* CONTATO */}
+        <section id="contato-form" className="bg-black text-white py-20">
+          <div className="bg-black px-4">
+            <div className="w-full max-w-6xl mx-auto">
+
+              {/* TÍTULO */}
+              <div className="text-center mb-16">
+                <h1 className="text-5xl md:text-6xl font-serif font-light mb-4">
+                  Contato
+                </h1>
+                <p className="text-gray-400 text-lg">
+                  Any question or remark? Just write us a message!
+                </p>
+              </div>
+
+            {/* CONTAINER DOS CARDS */}
+            <div className="flex flex-col md:flex-row">
+
+              {/* CARD ESQUERDO */}
+              <div className="bg-black-900 rounded-l-2xl p-8 border-8 border-white relative flex-1 flex flex-col text-lg">
+
+                {/* CONTEÚDO */}
+                <div>
+                  <h2 className="text-3xl font-light mb-4">
+                    Informações para contato
+                  </h2>
+
+                  <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                  Estamos prontos para atender você com agilidade, transparência e total compromisso com a segurança.
+                  Se você precisa de um serviço de içamento confiável, nossa equipe está preparada para entender
+                  sua necessidade e oferecer a melhor solução para o seu projeto.
+                  <br /><br />
+                  Entre em contato conosco para solicitar um orçamento, esclarecer dúvidas ou obter mais informações
+                  sobre nossos serviços. Também é possível utilizar o formulário ao lado para enviar sua mensagem
+                  de forma rápida e prática.
+                  <br /><br />
+                  Será um prazer atender você e contribuir para o sucesso do seu projeto.
+                  </p>
+
+                  {/* Telefone */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <p className="text-gray-400 text-xl">(0) 5625 - 4048</p>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-center gap-4 mb-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-gray-400 text-xl">torresicomatias@gmail.com</p>
+                  </div>
+
+                  {/* Endereço */}
+                  <div className="flex items-center gap-4">
+                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <p className="text-gray-400 text-xl">R. Rosa Russ Opis, 20</p>
+                  </div>
+                </div>
+
+                              {/* ÍCONES SOCIAIS FIXADOS NO FUNDO */}
+              <div className="mt-auto pt-10">
+                <p className="text-center text-gray-400 mb-4">
+                  Siga-nos nas redes sociais
+                </p>
+
+                <div className="flex justify-center items-center gap-5">
+                  <a href="#" className="hover:scale-110 transition">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                      alt="Whatsapp"
+                      className="w-7 h-7"
+                    />
+                  </a>
+
+                  <a href="#" className="hover:scale-110 transition">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+                      alt="TikTok"
+                      className="w-7 h-7"
+                    />
+                  </a>
+
+                  <a href="#" className="hover:scale-110 transition">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                      alt="Twitter"
+                      className="w-7 h-7"
+                    />
+                  </a>
+
+                  <a href="#" className="hover:scale-110 transition">
+                    <img
+                      src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                      alt="Facebook"
+                      className="w-7 h-7"
+                    />
+                  </a>
+                </div>
+              </div>
+
+
+              </div>
+
+              {/* Lado Direito - Formulário */}
+              <div className="bg-white rounded-r-2xl p-8 border-8 border-l-0 border-white flex-1">
+                <form className="space-y-6">
+                  {/* Linha 1: First Name e Last Name */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-gray-700 text-sm font-medium mb-2">First Name</label>
+                      <input type="text" placeholder="John" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-white text-gray-900 placeholder-gray-400" />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 text-sm font-medium mb-2">Last Name</label>
+                      <input type="text" placeholder="Doe" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-white text-gray-900 placeholder-gray-400" />
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                    <input type="email" placeholder="john@example.com" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-white text-gray-900 placeholder-gray-400" />
+                  </div>
+
+                  {/* Phone Number */}
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
+                    <input type="tel" placeholder="+1 (82) 3458-789" className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-white text-gray-900 placeholder-gray-400" />
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label className="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                    <textarea placeholder="Write your message..." rows={5} className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent bg-white text-gray-900 placeholder-gray-400 resize-none"></textarea>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="flex justify-end">
+                    <button type="submit" className="bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-900 transition">
+                      Enviar
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
