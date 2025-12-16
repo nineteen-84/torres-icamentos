@@ -5,7 +5,8 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        montserrat: ['Montserrat', 'sans-serif']
+        montserrat: ['Montserrat', 'sans-serif'],
+        source: ['"Source Serif 4"', 'sans-serif']
       }
     },
   },
