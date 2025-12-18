@@ -4,7 +4,7 @@ export const Home = () => {
   return (
     <Fragment>
       {/* Home */}
-      <main className="flex min-h-screen flex-col bg-[url('/bg.png')] bg-cover bg-fixed bg-center bg-no-repeat">
+      <main className="flex min-h-screen flex-col bg-[url('/main.jpg')] bg-cover bg-fixed bg-center bg-no-repeat">
         <header className="mb-4 mt-4 flex justify-center p-8">
           <nav className="flex gap-28">
             <a href="#sobre">Sobre</a>
@@ -20,7 +20,7 @@ export const Home = () => {
               Eleve com Rapidez: <br />
               Resultados em Minutos
             </h1>
-            <p className="font-inter text-xl font-light text-[#ececec65]">
+            <p className="font-inter text-xl font-light text-[#ffffff]">
               Eleve seus projetos com segurança. Nossos serviços de içamento
               <br /> tornam o trabalho rápido e confiável.
             </p>
@@ -34,7 +34,7 @@ export const Home = () => {
       </main>
 
       {/* Seção de Proteção, Normas e Certificações */}
-      <section className="rounded-3xl bg-[#0C0C08] py-[100px]">
+      <section className="bg-[#0C0C08] py-[80px]">
         <h1 className="mb-8 text-center font-source text-[87px]">
           Proteção, Normas e Certificações
         </h1>
@@ -68,129 +68,461 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="flex min-h-screen flex-col bg-[url('/bg-desc.png')] bg-cover bg-fixed bg-center bg-no-repeat">
-        <h1>Elevar é nossa especialidade, segurança é nossa prioridade.</h1>
-        <p>
+      {/* Seção Hero */}
+      <section className="flex w-full min-h-screen flex-col bg-[url('/hero.jpg')] bg-cover bg-fixed bg-center bg-no-repeat justify-end pb-[80px] pl-[80px]">
+
+        <h1 className="bg-gradient-to-l from-white to-[#ECECEC]/40 bg-clip-text font-montserrat text-7xl font-medium tracking-wide text-transparent flex items-end justify-start mb-[30px] pb-[10px]">Elevar é nossa especialidade, segurança é nossa prioridade.</h1>
+
+        <p className=" flex font-inter text-xl ">
           Na Torres Içamentos, elevamos seus projetos com rapidez, precisão e total segurança,
           garantindo resultados confiáveis e sem complicações.
         </p>
       </section>
 
-      <section id="trabalhos">
-        <h1>Trabalhos Concluídos</h1>
+      {/* Seção Trabalhos */}
+      <section id="trabalhos" className="flex w-full min-h-screen flex-col py-[80px] bg-[#0C0C08] ">
+        <h1 className="flex justify-center items-center mb-6 pt-4 font-source text-[87px]">Trabalhos Concluídos</h1>
 
-        <div>
-          <div>
-            <img src="" alt="" />
+        <div className="flex flex-wrap justify-center gap-10">
+          {/* Card-1 */}
+          <div
+            className="
+    group relative flex flex-col
+    w-full max-w-[420px] min-h-[520px]
+    rounded-[28px]
+    border border-white/10
+    bg-gradient-to-b from-[#14140F] to-[#0C0C08]
+    p-8
+    overflow-hidden
+    transition-all duration-500
+    hover:-translate-y-2
+  "
+          >
+            {/* Glow superior sutil */}
+            <span
+              className="
+      absolute -top-24 left-1/2
+      h-[220px] w-[220px]
+      -translate-x-1/2
+      rounded-full
+      bg-slate-400/20
+      blur-[140px]
+      opacity-70
+      transition-opacity duration-500
+      group-hover:opacity-100
+    "
+            />
 
-            <div>
-              <h1>Tempo de Mesa</h1>
-              <p>
-                13º andar — montagem em embalagem de madeira com mantas de proteção para garantir
-                total segurança no içamento.
+            {/* Textura refinada */}
+            <span
+              className="
+      absolute inset-0
+      bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_65%)]
+      opacity-50
+    "
+            />
+
+            {/* Imagem */}
+            <img
+              src="/Trabalhos-1.jpg"
+              alt="Tampo de mesa branco sendo içado com proteção reforçada"
+              className="
+      relative z-10
+      w-full h-[260px]
+      object-cover
+      rounded-2xl
+      shadow-[0_24px_60px_rgba(0,0,0,0.65)]
+      mb-8
+      transition-all duration-500
+      group-hover:scale-[1.06]
+    "
+            />
+
+            {/* Conteúdo */}
+            <div className="relative z-10 flex flex-col flex-1">
+              <h1 className="font-montserrat text-3xl font-semibold text-white mb-4 tracking-tight">
+                Tampo de Mesa
+              </h1>
+
+              <p className="font-inter text-base text-white/70 leading-relaxed mb-8">
+                13º andar — içamento técnico com estrutura de madeira reforçada e mantas
+                de proteção, garantindo total integridade do material durante a operação.
               </p>
+
+              {/* CTA */}
+              <span
+                className="
+        mt-auto inline-flex items-center gap-3
+        font-inter text-sm uppercase tracking-wider
+        text-white/60
+        transition-all duration-300
+        group-hover:text-white
+      "
+              >
+                Saber mais
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
             </div>
           </div>
 
-          <div>
-            <img src="" alt="" />
+          {/* Card-2 */}
+          <div
+            className="
+    group relative flex flex-col
+    w-full max-w-[420px] min-h-[520px]
+    rounded-[28px]
+    border border-white/10
+    bg-gradient-to-b from-[#14140F] to-[#0C0C08]
+    p-8
+    overflow-hidden
+    transition-all duration-500
+    hover:-translate-y-2
+  "
+          >
+            {/* Glow superior sutil */}
+            <span
+              className="
+      absolute -top-24 left-1/2
+      h-[220px] w-[220px]
+      -translate-x-1/2
+      rounded-full
+      bg-slate-400/20
+      blur-[140px]
+      opacity-70
+      transition-opacity duration-500
+      group-hover:opacity-100
+    "
+            />
 
-            <div>
-              <h1>Içamento de Móvel Embalado</h1>
-              <p>
-                Volume embalado e protegido sendo içado com cabos de aço, garantindo a movimentação
-                segura em área residencial com acesso restrito.
+            {/* Textura refinada */}
+            <span
+              className="
+      absolute inset-0
+      bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_65%)]
+      opacity-50
+    "
+            />
+
+            {/* Imagem */}
+            <img
+              src="/Trabalhos-2.jpg"
+              alt="Tampo de mesa branco sendo içado com proteção reforçada"
+              className="
+      relative z-10
+      w-full h-[260px]
+      object-cover
+      rounded-2xl
+      shadow-[0_24px_60px_rgba(0,0,0,0.65)]
+      mb-8
+      transition-all duration-500
+      group-hover:scale-[1.06]
+    "
+            />
+
+            {/* Conteúdo */}
+            <div className="relative z-10 flex flex-col flex-1">
+              <h1 className="font-montserrat text-3xl font-semibold text-white mb-4 tracking-tight">
+                Içamento de Móvel Embalado
+              </h1>
+
+              <p className="font-inter text-base text-white/70 leading-relaxed mb-8">
+                Volume embalado e protegido sendo içado com cabos de aço, garantindo a movimentação segura em área residencial com acesso restrito.
               </p>
+
+              {/* CTA */}
+              <span
+                className="
+        mt-auto inline-flex items-center gap-3
+        font-inter text-sm uppercase tracking-wider
+        text-white/60
+        transition-all duration-300
+        group-hover:text-white
+      "
+              >
+                Saber mais
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
             </div>
           </div>
 
-          <div>
-            <img src="" alt="" />
+          {/* Card-3 */}
+          <div
+            className="
+    group relative flex flex-col
+    w-full max-w-[420px] min-h-[520px]
+    rounded-[28px]
+    border border-white/10
+    bg-gradient-to-b from-[#14140F] to-[#0C0C08]
+    p-8
+    overflow-hidden
+    transition-all duration-500
+    hover:-translate-y-2
+  "
+          >
+            {/* Glow superior sutil */}
+            <span
+              className="
+      absolute -top-24 left-1/2
+      h-[220px] w-[220px]
+      -translate-x-1/2
+      rounded-full
+      bg-slate-400/20
+      blur-[140px]
+      opacity-70
+      transition-opacity duration-500
+      group-hover:opacity-100
+    "
+            />
 
-            <div>
-              <h1>Equipe em operação</h1>
-              <p>
-                Registro da equipe conduzindo o equipamento com precisão e cuidado, garantindo um
-                içamento seguro do início ao fim.
+            {/* Textura refinada */}
+            <span
+              className="
+      absolute inset-0
+      bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.06),transparent_65%)]
+      opacity-50
+    "
+            />
+
+            {/* Imagem */}
+            <img
+              src="/Equipe.jpg"
+              alt="Tampo de mesa branco sendo içado com proteção reforçada"
+              className="
+      relative z-10
+      w-full h-[260px]
+      object-cover
+      rounded-2xl
+      shadow-[0_24px_60px_rgba(0,0,0,0.65)]
+      mb-8
+      transition-all duration-500
+      group-hover:scale-[1.06]
+    "
+            />
+
+            {/* Conteúdo */}
+            <div className="relative z-10 flex flex-col flex-1">
+              <h1 className="font-montserrat text-3xl font-semibold text-white mb-4 tracking-tight">
+                Equipe em operação
+              </h1>
+
+              <p className="font-inter text-base text-white/70 leading-relaxed mb-8">
+                Registro da equipe conduzindo o equipamento com precisão e cuidado, garantindo um içamento seguro do início ao fim.
               </p>
+
+              {/* CTA */}
+              <span
+                className="
+        mt-auto inline-flex items-center gap-3
+        font-inter text-sm uppercase tracking-wider
+        text-white/60
+        transition-all duration-300
+        group-hover:text-white
+      "
+              >
+                Solicitar orçamento
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
             </div>
           </div>
         </div>
-
-        <button>
-          Solicitar Orçamento <i className="ph ph-arrow-circle-down"></i>
-        </button>
       </section>
 
-      <section
-        id="parceiros"
-        className="h-[800px] bg-[url('/bg-parceiros.png')] bg-cover bg-center bg-no-repeat"
+{/* Seção Parceiros */}
+<section
+  id="parceiros"
+  className="
+    relative py-[120px]
+    flex w-full min-h-screen flex-col
+    bg-[//parceiros.jpg]
+    bg-[#0C0C08]
+    bg-gradient-to-b from-[#0C0C08] via-[#0C0C08] to-[#090909]
+    overflow-hidden
+    bg-cover bg-fixed bg-center bg-no-repeat
+    justify-end
+  "
+>
+  {/* Imagem de fundo sutil */}
+  <img
+    src="/parceiros.jpg"
+    alt="Fundo decorativo"
+    className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
+  />
+
+  {/* Luz de fundo sutil */}
+  <span
+    className="
+      absolute inset-0
+      bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]
+    "
+  />
+
+  <div className="relative z-10 max-w-[1200px] mx-auto px-6">
+
+    {/* Título */}
+    <h2 className="flex justify-center items-center mb-6 pt-4 font-source text-[65px] text-[#ECECEC]">
+      Empresas que confiam no nosso trabalho
+    </h2>
+
+    {/* Subtítulo */}
+    <p
+      className="
+        mt-6
+        text-white/60
+        text-center
+        max-w-xl
+        mx-auto
+        font-inter
+      "
+    >
+      Parcerias construídas com base em segurança, precisão e compromisso
+      em cada operação realizada.
+    </p>
+
+    {/* Texto de autoridade */}
+    <p
+      className="
+        mt-12
+        text-center
+        text-white/60
+        max-w-3xl
+        mx-auto
+        font-inter
+        leading-relaxed
+      "
+    >
+      Atuamos ao lado de empresas dos mais diversos segmentos, como
+      <strong className="text-[#ECECEC] font-medium tracking-wide">
+        {" "}MiCasa, Francino, Bazzi Móveis, Solo Móveis, Tuti Móveis,
+        Rocha Machado Engenharia, Empório Beraldin, Fendi Móveis, Entreposto,
+        Ketal Móveis, Side by Home, Luri Persianas, Três Arquitetura,
+        Pomes Arquitetura, Lima Mudança
+      </strong>
+      , entre muitos outros parceiros que confiam no nosso trabalho diariamente.
+    </p>
+
+    {/* Grid de parceiros */}
+    <div
+      className="
+        mt-24
+        grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4
+        gap-14
+        items-center
+        justify-center
+      "
+    >
+      {/* Parceiro */}
+      <div
+        className="
+          group
+          flex items-center justify-center
+          h-[160px]
+          rounded-2xl
+          border border-white/15
+          bg-white/[0.06]
+          backdrop-blur-md
+          transition-all duration-300 ease-out
+          hover:bg-white/[0.12]
+          hover:border-white/30
+          hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]
+        "
       >
-        <div className="max-w-3xl pl-[200px] pt-[250px]">
-          <h1 className="mb-6 font-source text-6xl">Parceiros</h1>
-          <p className="mb-6 font-montserrat text-2xl">
-            Parcerias fortalecem nossa atuação e ampliam nossa capacidade de oferecer soluções
-            seguras e eficientes. Trabalhamos ao lado de empresas que compartilham nossos valores,
-            garantindo qualidade em cada etapa do processo.
-          </p>
-          <button className="font-sm rounded-3xl bg-[#DC143C] px-8 py-3 font-inter font-bold hover:bg-[#B01030]">
-            Seja um Parceiro
-          </button>
-        </div>
-      </section>
-      <div className="rounded-3xl bg-[#0C0C08] py-[60px]">
-        <div className="flex flex-col items-center justify-center md:flex-row md:gap-14 lg:flex-row lg:gap-20 xl:flex-row xl:gap-[200px]">
-          <img src="rocha_machado.png" alt="" className="h-28 w-auto md:h-20 lg:h-auto xl:h-auto" />
-          <img
-            src="lima.png"
-            alt=""
-            className="mb-24 mt-24 h-32 w-auto md:mb-0 md:mt-0 md:h-28 lg:mb-0 lg:mt-0 lg:h-auto xl:mb-0 xl:mt-0 xl:h-auto"
-          />
-          <img src="bazzy.png" alt="" className="w-auto md:h-28" />
-        </div>
+        <img
+          src="/micasa.png"
+          alt="MiCasa"
+          className="
+            max-h-[72px]
+            brightness-110
+            contrast-110
+            transition-all duration-300
+            group-hover:scale-105
+          "
+        />
       </div>
 
-      <section id="sobre">
-        <div>
-          <h1>
+      <div className="group flex items-center justify-center h-[160px] rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.12] hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
+        <img
+          src="/bazzy.png"
+          alt="Bazzi Móveis"
+          className="max-h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <div className="group flex items-center justify-center h-[160px] rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.12] hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
+        <img
+          src="/lima.png"
+          alt="Lima Mudança"
+          className="max-h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+
+      <div className="group flex items-center justify-center h-[160px] rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 hover:bg-white/[0.12] hover:border-white/30 hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
+        <img
+          src="/rocha_machado.png"
+          alt="Rocha Machado Engenharia"
+          className="max-h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+    </div>
+
+    {/* Selo de credibilidade */}
+    <span
+      className="
+        mt-16
+        block
+        text-center
+        text-white/40
+        text-sm
+        uppercase
+        tracking-widest
+      "
+    >
+      Parcerias construídas ao longo de anos de operação
+    </span>
+
+    {/* Linha divisória */}
+    <div
+      className="
+        mt-24
+        w-full h-px
+        bg-gradient-to-r
+        from-transparent via-white/20 to-transparent
+      "
+    />
+  </div>
+</section>
+
+
+
+      {/* Seção Sobre */}
+      <section id="sobre" className="flex w-full min-h-screen flex-col bg-[url('/Sobre.jpg')] bg-cover bg-fixed bg-center bg-no-repeat justify-end pb-[80px] pl-[80px] pr-12">
+
+        <div className="">
+          <h1 className="bg-gradient-to-r from-white to-[#ECECEC]/40 bg-clip-text font-montserrat text-7xl font-medium tracking-wide text-transparent pb-4">
             A TORRES IÇAMENTOS atua com equipamentos de alta qualidade e foco total em segurança.
           </h1>
-          <p>
+          <p className="font-inter text-xl font-light text-[#ECECEC] pb-4">
             Utilizamos estruturas que preservam paredes, janelas e pisos, garantindo eficiência sem
             danos. Nossa missão é realizar içamentos com excelência e responsabilidade técnica em
             cada operação.
           </p>
-          <button>
-            Solicitar Orçamento <i className="ph ph-arrow-circle-down"></i>
-          </button>
+          <div className="flex flex-wrap content-center">
+            <button className="flex items-center justify-center gap-3 px-8 py-4 bg-white/10 backdrop-blur-md hover:bg-[#ECECEC]/20 text-white text-lg font-medium rounded-lg transition-all duration-300">
+              Solicitar Orçamento
+              <i className="ph ph-arrow-circle-right text-red-500 text-xl"></i>
+            </button>
+
+          </div>
+
         </div>
       </section>
 
-      <section id="feedback">
-        <h1>Feedback</h1>
-        <p>
-          Confira a opinião de nossos clientes sobre a segurança e eficiência dos nossos serviços
-        </p>
-
-        <div>
-          <div>
-            <img src="" alt="" />
-            <img src="" alt="" />
-            <img src="" alt="" />
-          </div>
-
-          <div>
-            <img src="" alt="" />
-            <p>
-              A equipe da Torres Icamentos realizou o serviço com agilidade e atenção aos detalhes,
-              garantindo segurança e confiança em cada etapa. Excelente trabalho.
-            </p>
-            <h3>Cliente</h3>
-          </div>
-        </div>
-      </section>
-
-      <section id="feedbacks" className="bg-black text-white py-20">
+      <section id="feedbacks" className="bg-[#0C0C08] text-white py-20">
         <div className="container mx-auto px-4">
           {/* Cabeçalho da Seção */}
           <div className="text-center mb-16">
@@ -200,7 +532,7 @@ export const Home = () => {
 
           {/* Container do Carrossel/Imagem Central */}
           <div className="relative flex items-center justify-center">
-            
+
             {/* IMAGEM CENTRALIZADA (Elemento de Fundo) */}
             <div
               className="w-full max-w-3xl h-96 bg-gray-700 rounded-xl bg-cover bg-center"
@@ -229,20 +561,20 @@ export const Home = () => {
         </div>
       </section>
 
-              {/* CONTATO */}
-        <section id="contato-form" className="bg-black text-white py-20">
-          <div className="bg-black px-4">
-            <div className="w-full max-w-6xl mx-auto">
+      {/* CONTATO */}
+      <section id="contato-form" className="bg-[#0C0C08] text-white py-20">
+        <div className="bg-[#0C0C08] px-4">
+          <div className="w-full max-w-6xl mx-auto">
 
-              {/* TÍTULO */}
-              <div className="text-center mb-16">
-                <h1 className="text-5xl md:text-6xl font-serif font-light mb-4">
-                  Contato
-                </h1>
-                <p className="text-gray-400 text-lg">
-                  Any question or remark? Just write us a message!
-                </p>
-              </div>
+            {/* TÍTULO */}
+            <div className="text-center mb-16">
+              <h1 className="text-5xl md:text-6xl font-serif font-light mb-4">
+                Contato
+              </h1>
+              <p className="text-gray-400 text-lg">
+                Any question or remark? Just write us a message!
+              </p>
+            </div>
 
             {/* CONTAINER DOS CARDS */}
             <div className="flex flex-col md:flex-row">
@@ -257,15 +589,15 @@ export const Home = () => {
                   </h2>
 
                   <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                  Estamos prontos para atender você com agilidade, transparência e total compromisso com a segurança.
-                  Se você precisa de um serviço de içamento confiável, nossa equipe está preparada para entender
-                  sua necessidade e oferecer a melhor solução para o seu projeto.
-                  <br /><br />
-                  Entre em contato conosco para solicitar um orçamento, esclarecer dúvidas ou obter mais informações
-                  sobre nossos serviços. Também é possível utilizar o formulário ao lado para enviar sua mensagem
-                  de forma rápida e prática.
-                  <br /><br />
-                  Será um prazer atender você e contribuir para o sucesso do seu projeto.
+                    Estamos prontos para atender você com agilidade, transparência e total compromisso com a segurança.
+                    Se você precisa de um serviço de içamento confiável, nossa equipe está preparada para entender
+                    sua necessidade e oferecer a melhor solução para o seu projeto.
+                    <br /><br />
+                    Entre em contato conosco para solicitar um orçamento, esclarecer dúvidas ou obter mais informações
+                    sobre nossos serviços. Também é possível utilizar o formulário ao lado para enviar sua mensagem
+                    de forma rápida e prática.
+                    <br /><br />
+                    Será um prazer atender você e contribuir para o sucesso do seu projeto.
                   </p>
 
                   {/* Telefone */}
@@ -294,46 +626,46 @@ export const Home = () => {
                   </div>
                 </div>
 
-                              {/* ÍCONES SOCIAIS FIXADOS NO FUNDO */}
-              <div className="mt-auto pt-10">
-                <p className="text-center text-gray-400 mb-4">
-                  Siga-nos nas redes sociais
-                </p>
+                {/* ÍCONES SOCIAIS FIXADOS NO FUNDO */}
+                <div className="mt-auto pt-10">
+                  <p className="text-center text-gray-400 mb-4">
+                    Siga-nos nas redes sociais
+                  </p>
 
-                <div className="flex justify-center items-center gap-5">
-                  <a href="#" className="hover:scale-110 transition">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
-                      alt="Whatsapp"
-                      className="w-7 h-7"
-                    />
-                  </a>
+                  <div className="flex justify-center items-center gap-5">
+                    <a href="#" className="hover:scale-110 transition">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+                        alt="Whatsapp"
+                        className="w-7 h-7"
+                      />
+                    </a>
 
-                  <a href="#" className="hover:scale-110 transition">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
-                      alt="TikTok"
-                      className="w-7 h-7"
-                    />
-                  </a>
+                    <a href="#" className="hover:scale-110 transition">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+                        alt="TikTok"
+                        className="w-7 h-7"
+                      />
+                    </a>
 
-                  <a href="#" className="hover:scale-110 transition">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
-                      alt="Twitter"
-                      className="w-7 h-7"
-                    />
-                  </a>
+                    <a href="#" className="hover:scale-110 transition">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
+                        alt="Twitter"
+                        className="w-7 h-7"
+                      />
+                    </a>
 
-                  <a href="#" className="hover:scale-110 transition">
-                    <img
-                      src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
-                      alt="Facebook"
-                      className="w-7 h-7"
-                    />
-                  </a>
+                    <a href="#" className="hover:scale-110 transition">
+                      <img
+                        src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
+                        alt="Facebook"
+                        className="w-7 h-7"
+                      />
+                    </a>
+                  </div>
                 </div>
-              </div>
 
 
               </div>
