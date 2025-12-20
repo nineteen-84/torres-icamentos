@@ -3,18 +3,19 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev": "pnpm exec vite",
-  "build": "tsc -b && pnpm exec vite build",
-  "preview": "pnpm exec vite preview",
-  "lint": "pnpm exec eslint . --ext .ts,.tsx --fix",
-  "format": "pnpm exec prettier --write ."
-},
+  "scripts": {
+    "dev": "pnpm exec vite",
+    "build": "tsc -b && pnpm exec vite build",
+    "preview": "pnpm exec vite preview",
+    "lint": "pnpm exec eslint . --ext .ts,.tsx --fix",
+    "format": "pnpm exec prettier --write ."
+  },
   "dependencies": {
     "lucide-react": "^0.548.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router": "^7.9.4"
+    "react-router": "^7.9.4",
+    "react-simple-typewriter": "^5.0.1"
   },
   "devDependencies": {
     "@types/node": "^24.6.0",
