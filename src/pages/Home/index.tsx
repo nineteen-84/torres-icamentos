@@ -1,17 +1,49 @@
+import { ArrowBigDown, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Fragment } from "react/jsx-runtime";
+import { Loading } from "../../components/Loading";
 
 export const Home = () => {
+  const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 5500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <Fragment>
       {/* Home */}
-      <main className="flex min-h-screen flex-col bg-[url('/main.jpg')] bg-cover bg-fixed bg-center bg-no-repeat">
-        <header className="mb-4 mt-4 flex justify-center p-8">
-          <nav className="flex gap-10">
+      <main className="flex min-h-screen flex-col bg-[url('/main.jpg')] bg-cover bg-center bg-no-repeat">
+        <header className="relative mx-6 mt-6 lg:mx-0 lg:mt-0 lg:flex lg:justify-center lg:p-8">
+          <div className="flex items-center justify-between lg:hidden">
+            <img className="h-12 rounded-sm border border-gray-600" src="logo.png" alt="Logo" />
+
+            <button
+              onClick={() => setOpen(!open)}
+              className="rounded-full p-3 text-white transition-colors duration-300 hover:bg-white hover:text-black"
+            >
+              {open ? <X /> : <Menu />}
+            </button>
+          </div>
+
+          <nav
+            className={`fixed inset-0 z-50 flex flex-col items-center justify-center gap-10 bg-black/95 transition-all duration-300 ${open ? "opacity-100" : "pointer-events-none opacity-0"} lg:pointer-events-auto lg:static lg:z-auto lg:flex lg:flex-row lg:gap-10 lg:bg-transparent lg:opacity-100`}
+          >
             {["Trabalhos", "Parceiros", "Sobre", "Contato"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
+                onClick={() => setOpen(false)}
                 className="w-28 rounded-full px-4 py-2 text-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:shadow-md"
               >
                 {item}
@@ -20,10 +52,11 @@ export const Home = () => {
           </nav>
         </header>
 
-        <div className="flex flex-1 flex-col items-center justify-center gap-12 bg-gradient-to-t from-black/70 via-black/30 text-center">
-          <div className="flex flex-col gap-4">
-            <h1 className="bg-gradient-to-l from-white to-[#ECECEC]/40 bg-clip-text font-montserrat text-7xl font-medium tracking-wide text-transparent">
-              Eleve com Rapidez: <br />
+        <div className="flex flex-1 flex-col items-center justify-center gap-10 bg-gradient-to-t from-black/80 via-black/40 px-6 text-center">
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="z-auto bg-gradient-to-l from-white to-[#ECECEC]/40 bg-clip-text font-montserrat text-3xl tracking-wide text-transparent lg:py-2 lg:text-7xl lg:font-medium">
+              Eleve com Rapidez:
+              <br />
               <Typewriter
                 words={[
                   "Resultados em Minutos",
@@ -38,52 +71,63 @@ export const Home = () => {
                 delaySpeed={2000}
               />
             </h1>
-            <p className="font-inter text-xl font-light text-[#ffffff]">
-              Eleve seus projetos com segurança. Nossos serviços de içamento
-              <br /> tornam o trabalho rápido e confiável.
+
+            <p className="max-w-xs font-inter text-xs font-light text-white/90 lg:max-w-none lg:text-xl">
+              Eleve seus projetos com segurança. Nossos serviços de içamento tornam o trabalho
+              rápido e confiável.
             </p>
           </div>
 
-          <div className="flex gap-4">
-            <button className="rounded-3xl bg-[#DC143C] px-8 py-2 duration-300 ease-in hover:bg-green-800">
-              Contrate Agora
-            </button>
-            <button className="rounded-full border border-white/40 bg-white/10 px-8 py-3 font-medium text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black hover:shadow-xl">
-              Nossos Serviços
-            </button>
+          <div className="flex w-full flex-col gap-4 sm:w-auto lg:flex-row">
+            <a href="#contato">
+              <button className="rounded-full bg-[#DC143C] px-3 py-2 text-sm transition-colors duration-300 hover:bg-green-800 lg:px-8 lg:py-3 lg:text-sm">
+                Contrate Agora
+              </button>
+            </a>
+
+            <a href="#trabalhos">
+              <button className="rounded-full border border-white/40 bg-white/10 px-3 py-2 font-medium text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black hover:shadow-xl lg:px-8 lg:py-3 lg:text-sm">
+                Nossos Serviços
+              </button>
+            </a>
+          </div>
+
+          <div>
+            <ArrowBigDown className="my-2 h-8 w-8 animate-bounce rounded-full border border-white p-2 text-white/80 lg:h-12 lg:w-12" />
           </div>
         </div>
       </main>
 
       {/* Seção de Proteção, Normas e Certificações */}
       <section className="bg-[#0C0C08] py-[80px]">
-        <h1 className="mb-8 text-center font-source text-[72px] font-semibold leading-tight">
+        <h1 className="mb-8 text-center font-source text-2xl font-semibold leading-tight lg:text-[72px]">
           Proteção, Normas e Certificações
         </h1>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-3 gap-6">
+        {/* mx-auto grid max-w-6xl grid-cols-3 gap-6 lg:flex lg:flex-col */}
+        <div className="flex flex-col gap-6 text-xs lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-3">
           <div>
-            <h2 className="mb-4 font-montserrat text-2xl font-bold">Documento ART</h2>
-            <p className="font-inter text-xl">
+            <h2 className="mb-4 font-montserrat font-bold lg:text-2xl">Documento ART</h2>
+            <p className="font-inter lg:text-xl">
               Laudo técnico ART emitido por engenheiro para içamento.
             </p>
           </div>
 
           <div>
-            <h2 className="mb-4 font-montserrat text-2xl font-bold">Seguro de Elevação</h2>
-            <p className="font-inter text-xl">
+            <h2 className="mb-4 font-montserrat font-bold lg:text-2xl">Seguro de Elevação</h2>
+            <p className="font-inter lg:text-xl">
               Termo de responsabilidade para prevenção de acidentes.
             </p>
           </div>
 
           <div>
-            <h2 className="mb-4 font-montserrat text-2xl font-bold">
+            <h2 className="mb-4 font-montserrat font-bold lg:text-2xl">
               Certificações de Segurança e Trabalho
             </h2>
-            <p className="mb-3 font-inter text-xl">
+            <p className="mb-3 font-inter lg:text-xl">
               NR-35: Certifica profissionais para trabalho em altura.
             </p>
-            <p className="font-inter text-xl">
+            <p className="font-inter lg:text-xl">
               NR-18: Garante segurança e organização na construção civil.
             </p>
           </div>
@@ -92,11 +136,11 @@ export const Home = () => {
 
       {/* Seção Respiro */}
       <section className="flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-fixed bg-center bg-no-repeat pb-[80px] pl-[80px]">
-        <h1 className="mb-[30px] flex items-end justify-start bg-gradient-to-l from-white to-[#ECECEC]/40 bg-clip-text pb-[10px] font-montserrat text-7xl font-medium tracking-wide text-transparent">
+        <h1 className="mb-[30px] flex items-end justify-start bg-gradient-to-l from-white to-[#ECECEC]/40 bg-clip-text pb-[10px] font-montserrat text-sm font-medium tracking-wide text-transparent lg:text-7xl">
           Elevar é nossa especialidade, segurança é nossa prioridade.
         </h1>
 
-        <p className="flex font-inter text-xl">
+        <p className="flex font-inter text-sm lg:text-xl">
           Na Torres Içamentos, elevamos seus projetos com rapidez, precisão e total segurança,
           garantindo resultados confiáveis e sem complicações.
         </p>
@@ -366,7 +410,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* CONTATO */}
+      {/* Seção Contato */}
       <section id="contato" className="bg-[#0C0C08] py-20 text-white">
         <div className="bg-[#0C0C08] px-4">
           <div className="mx-auto w-full max-w-6xl">
@@ -578,73 +622,106 @@ export const Home = () => {
       </section>
 
       <footer className="bg-[url('/footer.png')] bg-cover bg-center">
-        <div className="container mx-auto px-[60px] pb-10 pt-10">
-          <div className="flex flex-col items-center gap-[200px] md:flex-row">
+        <div className="container mx-auto px-4 pb-10 pt-10 md:px-[60px]">
+          <div className="mt-24 flex flex-col items-center gap-12 md:flex-row md:gap-[200px]">
             <div className="shrink-0">
-              <img src="logo.png" alt="" />
+              <img src="logo.png" alt="Torres Içamentos Logo" className="max-w-[200px]" />
             </div>
 
-            <div className="grid grid-cols-1 gap-20 md:grid-cols-3">
+            <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-20">
               <div>
-                <h2 className="mb-[16px] font-inter text-lg font-bold">Endereço</h2>
-                <p className="mb-3 flex gap-2 font-inter">
-                  <img src="map.png" alt="" />R Rosa Ruas Dias 20
-                  <br />
-                </p>
-                <p className="flex gap-2 font-inter">
-                  <img src="email.png" alt="" />
-                  torresicamentos@gmail.com
-                </p>
+                <h2 className="mb-4 font-inter text-lg font-bold text-white">Endereço</h2>
+                <div className="space-y-3">
+                  <p className="flex items-center gap-2 font-inter text-white/80">
+                    <img src="map.png" alt="Localização" className="h-4 w-4" />
+                    R. Rosa Ruas Dias, 20
+                  </p>
+                  <p className="flex items-center gap-2 font-inter text-white/80">
+                    <img src="email.png" alt="Email" className="h-4 w-4" />
+                    torresicamentos@gmail.com
+                  </p>
+                </div>
               </div>
 
               <div>
-                <h2 className="mb-[16px] font-inter text-lg font-bold">Sobre</h2>
-                <ul>
-                  <li className="mb-3 font-inter">
-                    <a href="" className="hover:underline">
-                      Inicio
+                <h2 className="mb-4 font-inter text-lg font-bold text-white">Navegação</h2>
+                <ul className="space-y-2">
+                  <li>
+                    <a
+                      href="#"
+                      className="font-inter text-white/80 transition-colors hover:text-white hover:underline"
+                    >
+                      Início
                     </a>
                   </li>
-                  <li className="mb-3 font-inter">
-                    <a href="" className="hover:underline">
+                  <li>
+                    <a
+                      href="#trabalhos"
+                      className="font-inter text-white/80 transition-colors hover:text-white hover:underline"
+                    >
                       Trabalhos
                     </a>
                   </li>
-                  <li className="mb-3 font-inter">
-                    <a href="" className="hover:underline">
-                      Parcerias
+                  <li>
+                    <a
+                      href="#parceiros"
+                      className="font-inter text-white/80 transition-colors hover:text-white hover:underline"
+                    >
+                      Parceiros
                     </a>
                   </li>
-                  <li className="mb-3 font-inter">
-                    <a href="" className="hover:underline">
-                      Documentação
+                  <li>
+                    <a
+                      href="#sobre"
+                      className="font-inter text-white/80 transition-colors hover:text-white hover:underline"
+                    >
+                      Sobre
                     </a>
                   </li>
                 </ul>
               </div>
 
               <div>
-                <h2 className="mb-[16px] font-inter text-lg font-bold">Notificações</h2>
-                <form action="" className="mb-3">
-                  <div className="">
-                    <label htmlFor="" id="email">
-                      Email
+                <h2 className="mb-4 font-inter text-lg font-bold text-white">Newsletter</h2>
+                <form className="mb-6">
+                  <div className="space-y-2">
+                    <label
+                      htmlFor="newsletter-email"
+                      className="block font-inter text-sm text-white/80"
+                    >
+                      Receba novidades
                     </label>
-                    <input type="text" id="email" className="mb-2 mt-2 flex w-[235px] py-1" />
-                    <button className="w-[235px] bg-[#0A84FF] py-1 transition-colors duration-200 hover:bg-[#0070E0]">
+                    <input
+                      type="email"
+                      id="newsletter-email"
+                      placeholder="Seu email"
+                      className="w-full rounded border border-white/20 bg-white/10 px-3 py-2 text-white placeholder-white/60 backdrop-blur-sm focus:border-white/40 focus:outline-none focus:ring-1 focus:ring-white/20"
+                    />
+                    <button
+                      type="submit"
+                      className="w-full rounded bg-[#DC143C] py-2 font-inter text-white transition-colors duration-200 hover:bg-[#B91C3C]"
+                    >
                       Inscrever-se
                     </button>
                   </div>
                 </form>
 
                 <div>
-                  <h2 className="mb-3">Siga-nos</h2>
+                  <h3 className="mb-3 font-inter text-sm font-medium text-white">Siga-nos</h3>
                   <div className="flex gap-3">
-                    <a href="">
-                      <img src="face.png" alt="" className="h-6 w-6" />
+                    <a
+                      href="#"
+                      className="transition-transform hover:scale-110"
+                      aria-label="Facebook"
+                    >
+                      <img src="face.png" alt="Facebook" className="h-6 w-6" />
                     </a>
-                    <a href="">
-                      <img src="insta.png" alt="" className="h-6 w-6" />
+                    <a
+                      href="#"
+                      className="transition-transform hover:scale-110"
+                      aria-label="Instagram"
+                    >
+                      <img src="insta.png" alt="Instagram" className="h-6 w-6" />
                     </a>
                   </div>
                 </div>
@@ -653,17 +730,27 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="mx-auto px-2 px-[120px]">
-          <div className="flex justify-between gap-4 text-sm">
-            <h3 className="text-sm">© 2025 Todos os Direitos Reservados</h3>
-            <nav className="mb-3 flex gap-6">
-              <a href="" className="hover:underline">
-                Política de Privacidade
-              </a>
-              <a href="" className="hover:underline">
-                Termos de uso
-              </a>
-            </nav>
+        <div className="border-t border-white/10">
+          <div className="mx-auto max-w-7xl px-4 py-4 md:px-[120px]">
+            <div className="flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
+              <p className="text-white/60">
+                © 2025 Torres Içamentos. Todos os Direitos Reservados
+              </p>
+              <nav className="flex gap-6">
+                <a
+                  href="#"
+                  className="text-white/60 transition-colors hover:text-white hover:underline"
+                >
+                  Política de Privacidade
+                </a>
+                <a
+                  href="#"
+                  className="text-white/60 transition-colors hover:text-white hover:underline"
+                >
+                  Termos de Uso
+                </a>
+              </nav>
+            </div>
           </div>
         </div>
       </footer>

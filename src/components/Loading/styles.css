@@ -1,0 +1,31 @@
+@keyframes loading-bar {
+  0% { 
+    width: 0%; 
+    opacity: 1;
+  }
+  50% { 
+    width: 70%; 
+    opacity: 0.8;
+  }
+  100% { 
+    width: 100%; 
+    opacity: 1;
+  }
+}
+
+@keyframes crane-lift {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-8px);
+  }
+}
+
+.loading-bar {
+  animation: loading-bar 2s ease-in-out infinite;
+}
+
+.crane-animation {
+  animation: crane-lift 1.5s ease-in-out infinite;
+}
