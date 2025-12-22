@@ -1,5 +1,5 @@
-import { ArrowBigDown, Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowBigDown, Mail, MapPin, Menu, Phone, User, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { Fragment } from "react/jsx-runtime";
 import { Loading } from "../../components/Loading";
@@ -30,25 +30,42 @@ export const Home = () => {
 
             <button
               onClick={() => setOpen(!open)}
-              className="rounded-full p-3 text-white transition-colors duration-300 hover:bg-white hover:text-black"
+              className="fixed right-6 top-6 z-50 rounded-full bg-black/20 p-3 text-white backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white hover:text-black active:scale-95"
             >
-              {open ? <X /> : <Menu />}
+              <div
+                className={`transition-transform duration-300 ${open ? "rotate-90" : "rotate-0"}`}
+              >
+                {open ? <X size={20} /> : <Menu size={20} />}
+              </div>
             </button>
           </div>
 
           <nav
-            className={`fixed inset-0 z-50 flex flex-col items-center justify-center gap-10 bg-black/95 transition-all duration-300 ${open ? "opacity-100" : "pointer-events-none opacity-0"} lg:pointer-events-auto lg:static lg:z-auto lg:flex lg:flex-row lg:gap-10 lg:bg-transparent lg:opacity-100`}
+            className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 transition-all duration-300 ${open ? "opacity-100" : "pointer-events-none opacity-0"} lg:pointer-events-auto lg:static lg:z-auto lg:flex lg:flex-row lg:gap-10 lg:bg-transparent lg:opacity-100`}
           >
             {["Trabalhos", "Parceiros", "Sobre", "Contato"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setOpen(false)}
-                className="w-28 rounded-full px-4 py-2 text-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:shadow-md"
+                className="w-28 rounded-full px-4 py-2 text-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:shadow-md lg:w-auto"
               >
                 {item}
               </a>
             ))}
+
+            <a
+              href="https://github.com/nineteen-84"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1 text-white/60 transition-all duration-300 hover:text-white lg:hidden"
+            >
+              <span>Desenvolvido por</span>
+              <span className="font-semibold text-[#DC143C] transition-colors duration-300 group-hover:text-white">
+                NN84
+              </span>
+              <span className="text-xs">©</span>
+            </a>
           </nav>
         </header>
 
@@ -72,21 +89,24 @@ export const Home = () => {
               />
             </h1>
 
-            <p className="max-w-xs font-inter text-xs font-light text-white/90 lg:max-w-none lg:text-xl">
-              Eleve seus projetos com segurança. Nossos serviços de içamento tornam o trabalho
-              rápido e confiável.
+            <p className="max-w-xs font-inter text-sm leading-relaxed text-white/90 lg:max-w-2xl lg:text-xl lg:leading-relaxed">
+              Eleve seus projetos com segurança.
+              <br />
+              Nossos serviços de içamento tornam o trabalho{" "}
+              <span className="font-semibold text-white">rápido</span> e{" "}
+              <span className="font-semibold text-white">confiável</span>.
             </p>
           </div>
 
           <div className="flex w-full flex-col gap-4 sm:w-auto lg:flex-row">
             <a href="#contato">
-              <button className="rounded-full bg-[#DC143C] px-3 py-2 text-sm transition-colors duration-300 hover:bg-green-800 lg:px-8 lg:py-3 lg:text-sm">
+              <button className="w-60 rounded-full bg-[#DC143C] px-3 py-2 text-sm transition-colors duration-300 hover:bg-green-800 lg:w-auto lg:px-8 lg:py-3 lg:text-sm">
                 Contrate Agora
               </button>
             </a>
 
             <a href="#trabalhos">
-              <button className="rounded-full border border-white/40 bg-white/10 px-3 py-2 font-medium text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black hover:shadow-xl lg:px-8 lg:py-3 lg:text-sm">
+              <button className="w-60 rounded-full border border-white/40 bg-white/10 px-3 py-2 text-white shadow-lg backdrop-blur-md transition-all duration-300 hover:bg-white hover:text-black hover:shadow-xl lg:w-auto lg:px-8 lg:py-3 lg:text-sm">
                 Nossos Serviços
               </button>
             </a>
@@ -102,55 +122,68 @@ export const Home = () => {
       <section className="bg-[#0C0C08] py-[80px]">
         <h1 className="mb-8 text-center font-source text-2xl font-semibold leading-tight lg:text-[72px]">
           Proteção, Normas e Certificações
+          <div className="mx-auto h-1 w-full rounded-full bg-gradient-to-r from-[#ffffff] to-red-100"></div>
         </h1>
 
         {/* mx-auto grid max-w-6xl grid-cols-3 gap-6 lg:flex lg:flex-col */}
-        <div className="flex flex-col gap-6 text-xs lg:mx-auto lg:grid lg:max-w-6xl lg:grid-cols-3">
-          <div>
-            <h2 className="mb-4 font-montserrat font-bold lg:text-2xl">Documento ART</h2>
-            <p className="font-inter lg:text-xl">
-              Laudo técnico ART emitido por engenheiro para içamento.
-            </p>
-          </div>
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="divide-y divide-white/20 md:grid md:grid-cols-3 md:gap-12 md:divide-x md:divide-y-0">
+            <div className="pb-8 md:pb-0">
+              <h2 className="mb-4 font-montserrat text-lg font-bold text-white lg:text-2xl">
+                Documento ART
+              </h2>
+              <p className="font-inter text-sm leading-relaxed text-white/80 lg:text-xl">
+                Laudo técnico ART emitido por engenheiro para içamento.
+              </p>
+            </div>
 
-          <div>
-            <h2 className="mb-4 font-montserrat font-bold lg:text-2xl">Seguro de Elevação</h2>
-            <p className="font-inter lg:text-xl">
-              Termo de responsabilidade para prevenção de acidentes.
-            </p>
-          </div>
+            <div className="py-8 md:px-12 md:py-0">
+              <h2 className="mb-4 font-montserrat text-lg font-bold text-white lg:text-2xl">
+                Seguro de Elevação
+              </h2>
+              <p className="font-inter text-sm leading-relaxed text-white/80 lg:text-xl">
+                Termo de responsabilidade para prevenção de acidentes.
+              </p>
+            </div>
 
-          <div>
-            <h2 className="mb-4 font-montserrat font-bold lg:text-2xl">
-              Certificações de Segurança e Trabalho
-            </h2>
-            <p className="mb-3 font-inter lg:text-xl">
-              NR-35: Certifica profissionais para trabalho em altura.
-            </p>
-            <p className="font-inter lg:text-xl">
-              NR-18: Garante segurança e organização na construção civil.
-            </p>
+            <div className="pt-8 md:pl-12 md:pt-0">
+              <h2 className="mb-4 font-montserrat text-lg font-bold text-white lg:text-2xl">
+                Certificações de Segurança e Trabalho
+              </h2>
+              <p className="mb-3 font-inter text-sm leading-relaxed text-white/80 lg:text-xl">
+                NR-35: Certifica profissionais para trabalho em altura.
+              </p>
+              <p className="font-inter text-sm leading-relaxed text-white/80 lg:text-xl">
+                NR-18: Garante segurança e organização na construção civil.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Seção Respiro */}
-      <section className="flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-fixed bg-center bg-no-repeat pb-[80px] pl-[80px]">
-        <h1 className="mb-[30px] flex items-end justify-start bg-gradient-to-l from-white to-[#ECECEC]/40 bg-clip-text pb-[10px] font-montserrat text-sm font-medium tracking-wide text-transparent lg:text-7xl">
-          Elevar é nossa especialidade, segurança é nossa prioridade.
-        </h1>
+      <section className="relative flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-fixed bg-center bg-no-repeat">
+        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pb-20 lg:px-8">
+          <h1 className="mb-8 font-montserrat text-2xl font-medium leading-tight text-white lg:text-6xl lg:leading-tight">
+            Elevar é nossa especialidade, segurança é nossa prioridade.
+          </h1>
 
-        <p className="flex font-inter text-sm lg:text-xl">
-          Na Torres Içamentos, elevamos seus projetos com rapidez, precisão e total segurança,
-          garantindo resultados confiáveis e sem complicações.
-        </p>
+          <p className="max-w-2xl font-inter text-sm leading-relaxed text-white/90 lg:text-xl lg:leading-relaxed">
+            Na Torres Içamentos, elevamos seus projetos com rapidez, precisão e total segurança,
+            garantindo resultados confiáveis e sem complicações.
+          </p>
+        </div>
       </section>
 
       {/* Seção Trabalhos */}
       <section id="trabalhos" className="flex min-h-screen w-full flex-col bg-[#0C0C08] py-[80px]">
-        <h1 className="mb-6 bg-gradient-to-r from-white to-white/60 bg-clip-text pt-6 text-center font-source text-[64px] font-semibold leading-tight text-transparent">
-          Trabalhos Concluídos
-        </h1>
+        <div className="mb-12 text-center">
+          <h1 className="mb-4 font-source text-3xl font-semibold text-white lg:text-5xl">
+            Trabalhos Concluídos
+          </h1>
+          <div className="mx-auto h-1 w-full rounded-full bg-gradient-to-r from-[#ffffff] to-red-100"></div>
+        </div>
 
         <div className="flex flex-wrap justify-center gap-10">
           {/* Card-1 */}
@@ -180,12 +213,12 @@ export const Home = () => {
               </p>
 
               {/* CTA */}
-              <span className="mt-auto inline-flex items-center gap-3 font-inter text-sm uppercase tracking-wider text-white/60 transition-all duration-300 group-hover:text-white">
+              {/* <span className="mt-auto inline-flex items-center gap-3 font-inter text-sm uppercase tracking-wider text-white/60 transition-all duration-300 group-hover:text-white">
                 Saber mais
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </span>
+              </span> */}
             </div>
           </div>
 
@@ -216,12 +249,12 @@ export const Home = () => {
               </p>
 
               {/* CTA */}
-              <span className="mt-auto inline-flex items-center gap-3 font-inter text-sm uppercase tracking-wider text-white/60 transition-all duration-300 group-hover:text-white">
+              {/* <span className="mt-auto inline-flex items-center gap-3 font-inter text-sm uppercase tracking-wider text-white/60 transition-all duration-300 group-hover:text-white">
                 Saber mais
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </span>
+              </span> */}
             </div>
           </div>
 
@@ -252,12 +285,15 @@ export const Home = () => {
               </p>
 
               {/* CTA */}
-              <span className="mt-auto inline-flex items-center gap-3 font-inter text-sm uppercase tracking-wider text-white/60 transition-all duration-300 group-hover:text-white">
+              {/* <a
+                href="#contato"
+                className="mt-auto inline-flex items-center gap-3 font-inter text-sm uppercase tracking-wider text-white/60 transition-all duration-300 group-hover:text-white"
+              >
                 Solicitar orçamento
                 <span className="transition-transform duration-300 group-hover:translate-x-1">
                   →
                 </span>
-              </span>
+              </a> */}
             </div>
           </div>
         </div>
@@ -280,26 +316,25 @@ export const Home = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] px-2">
           {/* Título */}
-          <h2 className="mb-6 flex items-center justify-center pt-4 font-source text-[65px] text-[#ECECEC]">
-            Empresas que confiam no nosso trabalho
+          <h2 className="mb-6 text-center font-source text-3xl font-semibold leading-tight text-[#ECECEC] lg:text-5xl">
+            Empresas Parceiras
           </h2>
 
           {/* Subtítulo */}
-          <p className="mx-auto mt-6 max-w-xl text-center font-inter text-white/60">
+          <p className="mx-auto mt-6 max-w-xl px-4 text-center font-inter text-sm text-white/60 lg:text-2xl">
             Parcerias construídas com base em segurança, precisão e compromisso em cada operação
             realizada.
           </p>
 
           {/* Texto de autoridade */}
-          <p className="mx-auto mt-12 max-w-3xl text-center font-inter leading-relaxed text-white/60">
-            Atuamos ao lado de empresas dos mais diversos segmentos, como
-            <strong className="font-medium tracking-wide text-[#ECECEC]">
-              {" "}
+          <p className="mx-auto mt-12 max-w-4xl px-4 text-center font-inter text-sm leading-relaxed text-white/70 lg:text-lg lg:leading-relaxed">
+            Atuamos ao lado de empresas dos mais diversos segmentos, como{" "}
+            <span className="font-semibold text-white">
               MiCasa, Francino, Bazzi Móveis, Solo Móveis, Tuti Móveis, Rocha Machado Engenharia,
               Empório Beraldin, Fendi Móveis, Entreposto, Ketal Móveis, Side by Home, Luri
               Persianas, Três Arquitetura, Pomes Arquitetura, Lima Mudança
-            </strong>
-            , entre muitos outros parceiros que confiam no nosso trabalho diariamente.
+            </span>{" "}
+            e muitos outros parceiros que confiam no nosso trabalho diariamente.
           </p>
 
           {/* Grid de parceiros */}
@@ -354,10 +389,10 @@ export const Home = () => {
         className="flex min-h-screen w-full flex-col justify-end bg-[url('/Sobre.jpg')] bg-cover bg-fixed bg-center bg-no-repeat pb-[80px] pl-[80px] pr-12"
       >
         <div className="">
-          <h1 className="bg-gradient-to-r from-white to-[#ECECEC]/40 bg-clip-text pb-4 font-montserrat text-7xl font-medium tracking-wide text-transparent">
+          <h1 className="mb-6 font-montserrat text-2xl font-medium leading-tight text-white lg:text-5xl lg:leading-tight">
             A TORRES IÇAMENTOS atua com equipamentos de alta qualidade e foco total em segurança.
           </h1>
-          <p className="pb-4 font-inter text-xl font-light text-[#ECECEC]">
+          <p className="max-w-3xl pb-6 font-inter text-sm leading-relaxed text-white/90 lg:text-xl lg:leading-relaxed">
             Utilizamos estruturas que preservam paredes, janelas e pisos, garantindo eficiência sem
             danos. Nossa missão é realizar içamentos com excelência e responsabilidade técnica em
             cada operação.
@@ -375,7 +410,8 @@ export const Home = () => {
         <div className="container mx-auto px-4">
           {/* Cabeçalho da Seção */}
           <div className="mb-16 text-center">
-            <h2 className="font-serif text-5xl font-bold">Feedbacks</h2>
+            <h2 className="font-serif text-3xl font-bold lg:text-5xl">Opiniões</h2>
+
             <p className="mx-auto mt-4 max-w-2xl text-gray-400">
               Confira a opinião de nossos clientes sobre a segurança e eficiência dos nossos
               serviços
@@ -384,7 +420,6 @@ export const Home = () => {
 
           {/* Container do Carrossel/Imagem Central */}
           <div className="relative flex items-center justify-center">
-            {/* IMAGEM CENTRALIZADA (Elemento de Fundo) */}
             <div
               className="h-96 w-full max-w-3xl rounded-xl bg-gray-700 bg-cover bg-center"
               style={{ backgroundImage: `url('/icamentofeedback.jpg')` }}
@@ -394,7 +429,9 @@ export const Home = () => {
             <div className="absolute left-1/2 top-1/2 w-full max-w-lg -translate-x-1/2 -translate-y-1/2">
               {/* Avatar */}
               <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-                <div className="h-24 w-24 rounded-full border-4 border-white bg-gray-300 shadow-lg" />
+                <div className="flex h-24 w-24 items-center justify-center rounded-full border-4 border-white bg-gray-300 shadow-lg">
+                  <User className="h-12 w-12 text-gray-600" />
+                </div>
               </div>
 
               {/* Conteúdo do Card */}
@@ -403,7 +440,7 @@ export const Home = () => {
                   "A equipe da Torres Içamentos realizou o serviço com agilidade e atenção aos
                   detalhes, garantindo segurança e confiança em cada etapa. Excelente trabalho."
                 </p>
-                <p className="mt-6 font-bold text-gray-900">Cliente</p>
+                <p className="mt-6 font-bold text-gray-900">Jaqueline Souza</p>
               </div>
             </div>
           </div>
@@ -416,9 +453,11 @@ export const Home = () => {
           <div className="mx-auto w-full max-w-6xl">
             {/* TÍTULO */}
             <div className="mb-16 text-center">
-              <h1 className="mb-4 font-serif text-5xl font-light md:text-6xl">Contato</h1>
+              <h1 className="mb-4 font-serif text-3xl font-light md:text-6xl lg:text-5xl">
+                Contato
+              </h1>
               <p className="text-lg text-gray-400">
-                Any question or remark? Just write us a message!
+                Fico com alguma dúvida? Então escreva para a gente!
               </p>
             </div>
 
@@ -445,63 +484,18 @@ export const Home = () => {
                     Será um prazer atender você e contribuir para o sucesso do seu projeto.
                   </p>
 
-                  {/* Telefone */}
                   <div className="mb-4 flex items-center gap-4">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
-                    <p className="text-xl text-gray-400">(0) 5625 - 4048</p>
+                    <Phone className="h-6 w-6 text-white" />
+                    <p className="text-xl text-gray-400">(+55) 11 0000-0000</p>
                   </div>
 
-                  {/* Email */}
                   <div className="mb-4 flex items-center gap-4">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <Mail className="h-6 w-6 text-white" />
                     <p className="text-xl text-gray-400">torresicomatias@gmail.com</p>
                   </div>
 
-                  {/* Endereço */}
                   <div className="flex items-center gap-4">
-                    <svg
-                      className="h-6 w-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+                    <MapPin className="h-6 w-6 text-white" />
                     <p className="text-xl text-gray-400">R. Rosa Russ Opis, 20</p>
                   </div>
                 </div>
@@ -511,7 +505,7 @@ export const Home = () => {
                   <p className="mb-4 text-center text-gray-400">Siga-nos nas redes sociais</p>
 
                   <div className="flex items-center justify-center gap-5">
-                    <a href="#" className="transition hover:scale-110">
+                    <a href="#" className="text-green-500 transition hover:scale-110">
                       <img
                         src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
                         alt="Whatsapp"
@@ -519,7 +513,7 @@ export const Home = () => {
                       />
                     </a>
 
-                    <a href="#" className="transition hover:scale-110">
+                    <a href="#" className="text-white transition hover:scale-110">
                       <img
                         src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
                         alt="TikTok"
@@ -527,7 +521,7 @@ export const Home = () => {
                       />
                     </a>
 
-                    <a href="#" className="transition hover:scale-110">
+                    <a href="#" className="text-blue-400 transition hover:scale-110">
                       <img
                         src="https://cdn-icons-png.flaticon.com/512/733/733579.png"
                         alt="Twitter"
@@ -535,7 +529,7 @@ export const Home = () => {
                       />
                     </a>
 
-                    <a href="#" className="transition hover:scale-110">
+                    <a href="#" className="text-blue-600 transition hover:scale-110">
                       <img
                         src="https://cdn-icons-png.flaticon.com/512/733/733547.png"
                         alt="Facebook"
@@ -552,22 +546,20 @@ export const Home = () => {
                   {/* Linha 1: First Name e Last Name */}
                   <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                     <div>
-                      <label className="mb-2 block text-sm font-medium text-gray-700">
-                        First Name
-                      </label>
+                      <label className="mb-2 block text-sm font-medium text-gray-700">Nome:</label>
                       <input
                         type="text"
-                        placeholder="John"
+                        placeholder="José"
                         className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-black"
                       />
                     </div>
                     <div>
                       <label className="mb-2 block text-sm font-medium text-gray-700">
-                        Last Name
+                        Sobrenome
                       </label>
                       <input
                         type="text"
-                        placeholder="Doe"
+                        placeholder="Caique"
                         className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-black"
                       />
                     </div>
@@ -578,28 +570,26 @@ export const Home = () => {
                     <label className="mb-2 block text-sm font-medium text-gray-700">Email</label>
                     <input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="josecaique@exemplo.com"
                       className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-black"
                     />
                   </div>
 
                   {/* Phone Number */}
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-700">
-                      Phone Number
-                    </label>
+                    <label className="mb-2 block text-sm font-medium text-gray-700">Telefone</label>
                     <input
                       type="tel"
-                      placeholder="+1 (82) 3458-789"
+                      placeholder="+55 (11) 0000-0000"
                       className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-black"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="mb-2 block text-sm font-medium text-gray-700">Message</label>
+                    <label className="mb-2 block text-sm font-medium text-gray-700">Messagem</label>
                     <textarea
-                      placeholder="Write your message..."
+                      placeholder="Digite sua messagem aqui..."
                       rows={5}
                       className="w-full resize-none rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-black"
                     ></textarea>
@@ -629,16 +619,16 @@ export const Home = () => {
             </div>
 
             <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-20">
-              <div>
+              <div className="min-w-0">
                 <h2 className="mb-4 font-inter text-lg font-bold text-white">Endereço</h2>
                 <div className="space-y-3">
                   <p className="flex items-center gap-2 font-inter text-white/80">
                     <img src="map.png" alt="Localização" className="h-4 w-4" />
                     R. Rosa Ruas Dias, 20
                   </p>
-                  <p className="flex items-center gap-2 font-inter text-white/80">
-                    <img src="email.png" alt="Email" className="h-4 w-4" />
-                    torresicamentos@gmail.com
+                  <p className="flex items-start gap-2 font-inter text-white/80">
+                    <img src="email.png" alt="Email" className="mt-0.5 h-4 w-4 flex-shrink-0" />
+                    <span className="min-w-0 break-all">torresicamentos@gmail.com</span>
                   </p>
                 </div>
               </div>
@@ -736,7 +726,19 @@ export const Home = () => {
               <p className="text-white/60">
                 © 2025 Torres Içamentos. Todos os Direitos Reservados
               </p>
-              <nav className="flex gap-6">
+              <a
+                href="https://github.com/nineteen-84"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1 text-white/60 transition-all duration-300 hover:text-white"
+              >
+                <span>Desenvolvido por</span>
+                <span className="font-semibold text-[#DC143C] transition-colors duration-300 group-hover:text-white">
+                  NN84
+                </span>
+                <span className="text-xs">©</span>
+              </a>
+              {/* <nav className="flex gap-6">
                 <a
                   href="#"
                   className="text-white/60 transition-colors hover:text-white hover:underline"
@@ -749,7 +751,7 @@ export const Home = () => {
                 >
                   Termos de Uso
                 </a>
-              </nav>
+              </nav> */}
             </div>
           </div>
         </div>
