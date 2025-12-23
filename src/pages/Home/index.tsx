@@ -7,7 +7,7 @@ import { ArrowBigDown, Mail, MapPin, Phone } from "lucide-react";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { Card } from "../../components/Card";
-import { Opinition } from "../../components/Card/opinition";
+import { CardOpinion } from "../../components/Card/Opinion";
 
 export const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -314,21 +314,21 @@ export const Home = () => {
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="relative flex items-center justify-center">
-              <Opinition
+              <CardOpinion
                 comment="A equipe da Torres Içamentos fez um trabalho incrível! Foram super ágeis e cuidadosos com cada detalhe. Me senti segura durante todo o processo. Recomendo!"
                 author="Jaqueline Souza"
               />
             </div>
 
             <div className="relative flex items-center justify-center">
-              <Opinition
+              <CardOpinion
                 comment="Serviço impecável! A Torres Içamentos cumpriu todos os prazos e fez tudo com muito cuidado. Equipe profissional e equipamentos de qualidade."
                 author="Carlos Silva"
               />
             </div>
 
             <div className="relative flex items-center justify-center">
-              <Opinition
+              <CardOpinion
                 comment="Excelente trabalho! Precisei de um içamento urgente e eles resolveram rapidinho. Preço justo e resultado perfeito. Super indico!"
                 author="Maria Santos"
               />

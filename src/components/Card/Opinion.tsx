@@ -1,12 +1,12 @@
 import { User } from "lucide-react";
 
-interface PropsCardOpinition {
+interface PropsCardOpinion {
   image?: string;
   comment: string;
   author: string;
 }
 
-export const Opinition = (props: PropsCardOpinition) => {
+export const CardOpinion = (props: PropsCardOpinion) => {
   return (
     <>
       <div
