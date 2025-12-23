@@ -10,6 +10,7 @@
 }
 
 body {
+  font-family: 'Inter', sans-serif;
   background-color: black;
   color: white;
 }
@@ -30,4 +31,21 @@ img {
 
 input, button, textarea, select {
   font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0C08;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DC143C;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B91C3C;
 }
