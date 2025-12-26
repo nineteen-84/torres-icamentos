@@ -284,19 +284,30 @@ export const Home = () => {
       >
         <div>
           <h1 className="mb-6 text-2xl font-medium leading-tight text-white lg:text-5xl lg:leading-tight">
-            A TORRES IÇAMENTOS trabalha com equipamentos de primeira linha e prioriza a segurança em
-            tudo que faz.
+            A Torres Içamentos atua há mais de 11 anos com equipamentos de primeira linha,
+            priorizando a segurança em cada operação.
           </h1>
 
           <p className="max-w-3xl pb-6 text-sm leading-relaxed text-white/90 lg:text-xl lg:leading-relaxed">
-            Usamos estruturas que protegem paredes, janelas e pisos, garantindo um trabalho
-            eficiente sem causar danos. Nossa missão é executar cada içamento com excelência e total
-            responsabilidade técnica.
+            Executamos içamentos com planejamento técnico e total cuidado com o ambiente,
+            utilizando estruturas que protegem paredes, janelas e pisos. Atuamos com
+            responsabilidade, precisão e respeito ao seu patrimônio.
           </p>
 
-          <div className="flex flex-wrap content-center">
-            {/* botão mantido comentado */}
+          <p className="mt-2 text-sm text-white/70 lg:text-base">
+            Atendemos São Paulo, Grande São Paulo, litoral e interior.
+          </p>
+
+          <div className="mt-10 flex w-full justify-normal">
+            <a href="#contato">
+              <button className="h-10 w-60 rounded-full bg-[#DC143C] px-3 text-sm text-white transition-colors duration-300 hover:bg-green-800 lg:w-auto lg:px-8">
+                Solicitar orçamento
+              </button>
+            </a>
           </div>
+
+
+
         </div>
       </section>
 
