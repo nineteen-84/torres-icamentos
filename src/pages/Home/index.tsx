@@ -133,8 +133,9 @@ export const Home = () => {
       </section>
 
       {/* Seção Respiro */}
-      <section className="relative flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-fixed bg-center bg-no-repeat">
+      <section className="relative flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-center bg-no-repeat bg-scroll lg:bg-fixed">
         <div className="absolute inset-0 bg-black/40"></div>
+
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-20 lg:px-8">
           <h1 className="mb-8 text-2xl font-medium leading-tight text-white lg:text-6xl lg:leading-tight">
             Elevar é nossa especialidade, segurança é nossa prioridade.
@@ -146,6 +147,7 @@ export const Home = () => {
           </p>
         </div>
       </section>
+
 
       {/* Seção Trabalhos */}
       <section id="trabalhos" className="flex min-h-screen w-full flex-col bg-[#0C0C08] py-[80px]">
@@ -184,7 +186,7 @@ export const Home = () => {
       {/* Seção Parceiros */}
       <section
         id="parceiros"
-        className="bg-[//parceiros.jpg] relative flex min-h-screen w-full flex-col justify-end overflow-hidden bg-[#0C0C08] bg-gradient-to-b from-[#0C0C08] via-[#0C0C08] to-[#090909] bg-cover bg-fixed bg-center bg-no-repeat py-[120px]"
+        className="relative flex min-h-screen w-full flex-col justify-end overflow-hidden bg-[#0C0C08] bg-gradient-to-b from-[#0C0C08] via-[#0C0C08] to-[#090909] bg-cover bg-center bg-no-repeat bg-scroll lg:bg-fixed py-[120px]"
       >
         {/* Imagem de fundo sutil */}
         <img
@@ -198,7 +200,6 @@ export const Home = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] px-2">
           {/* Título */}
-          {/* mb-4 text-3xl font-bold md:text-6xl lg:text-5xl */}
           <h2 className="mb-4 text-center text-3xl font-bold md:text-6xl lg:text-5xl">
             Empresas Parceiras
           </h2>
@@ -222,13 +223,12 @@ export const Home = () => {
 
           {/* Grid de parceiros */}
           <div className="mt-24 grid grid-cols-2 items-center justify-center gap-14 sm:grid-cols-3 md:grid-cols-4">
-            {/* Parceiro */}
             <a href="https://www.micasa.com.br/" target="_blank" rel="noopener noreferrer">
               <div className="group flex h-[160px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 ease-out hover:border-white/30 hover:bg-white/[0.12] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
                 <img
                   src="/micasa.png"
                   alt="MiCasa"
-                  className="contrast-110 max-h-[72px] brightness-110 transition-all duration-300 group-hover:scale-105"
+                  className="max-h-[72px] contrast-110 brightness-110 transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             </a>
@@ -268,39 +268,38 @@ export const Home = () => {
             </a>
           </div>
 
-          {/* Selo de credibilidade */}
           <span className="mt-16 block text-center text-sm uppercase tracking-widest text-white/40">
             Parcerias construídas ao longo de anos de operação
           </span>
 
-          {/* Linha divisória */}
           <div className="mt-24 h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         </div>
       </section>
 
+
       {/* Seção Sobre */}
       <section
         id="sobre"
-        className="flex min-h-screen w-full flex-col justify-end bg-[url('/Sobre.jpg')] bg-cover bg-fixed bg-center bg-no-repeat pb-[80px] pl-[80px] pr-12"
+        className="flex min-h-screen w-full flex-col justify-end bg-[url('/Sobre.jpg')] bg-cover bg-center bg-no-repeat bg-scroll lg:bg-fixed pb-[80px] px-6 lg:pl-[80px] lg:pr-12"
       >
-        <div className="">
+        <div>
           <h1 className="mb-6 text-2xl font-medium leading-tight text-white lg:text-5xl lg:leading-tight">
             A TORRES IÇAMENTOS trabalha com equipamentos de primeira linha e prioriza a segurança em
             tudo que faz.
           </h1>
+
           <p className="max-w-3xl pb-6 text-sm leading-relaxed text-white/90 lg:text-xl lg:leading-relaxed">
             Usamos estruturas que protegem paredes, janelas e pisos, garantindo um trabalho
             eficiente sem causar danos. Nossa missão é executar cada içamento com excelência e total
             responsabilidade técnica.
           </p>
+
           <div className="flex flex-wrap content-center">
-            {/* <button className="flex items-center justify-center gap-3 rounded-lg bg-white/10 px-8 py-4 text-lg font-medium text-white backdrop-blur-md transition-all duration-300 hover:bg-[#ECECEC]/20">
-              Solicitar Orçamento
-              <i className="ph ph-arrow-circle-right text-xl text-red-500"></i>
-            </button> */}
+            {/* botão mantido comentado */}
           </div>
         </div>
       </section>
+
 
       <section id="feedbacks" className="bg-[#0C0C08] py-20 text-white">
         <div className="container mx-auto px-4">

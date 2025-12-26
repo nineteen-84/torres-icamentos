@@ -10,14 +10,32 @@ export const Footer = () => {
           <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-20">
             <div className="min-w-0">
               <h2 className="mb-4 text-lg font-bold text-white">Endereço</h2>
-              <div className="space-y-3">
-                <p className="flex items-center gap-2 text-white/80">
+
+              <div className="space-y-3 text-white/80">
+                <p className="flex items-center gap-2">
                   <img src="map.png" alt="Localização" className="h-4 w-4" />
                   R. Rosa Ruas Dias, 20
                 </p>
-                <p className="flex items-start gap-2 text-white/80">
+
+                <p className="flex items-start gap-2">
                   <img src="email.png" alt="Email" className="mt-0.5 h-4 w-4 flex-shrink-0" />
-                  <span className="min-w-0 break-all">torresicamentos@gmail.com</span>
+                  <a
+                    href="mailto:torresicamentos@gmail.com"
+                    className="min-w-0 break-all text-white/80 transition-colors hover:text-white hover:underline"
+                  >
+                    torresicamentos@gmail.com
+                  </a>
+                </p>
+
+                <p className="flex items-start gap-2">
+                  <span>
+                    Atendimento de segunda a sexta-feira<br />
+                    08:30 às 12:00 • 13:00 às 17:30
+                  </span>
+                </p>
+
+                <p className="flex items-center gap-2 text-sm text-white/60">
+                  CNPJ 19.692.721/0001-38
                 </p>
               </div>
             </div>
@@ -86,14 +104,19 @@ export const Footer = () => {
                 <h3 className="mb-3 text-sm font-medium text-white">Siga-nos</h3>
                 <div className="flex gap-3">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/torresicamentos/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="transition-transform hover:scale-110"
                     aria-label="Facebook"
                   >
                     <img src="face.png" alt="Facebook" className="h-6 w-6" />
                   </a>
+
                   <a
-                    href="#"
+                    href="https://www.instagram.com/icamento_torres?igsh=MWo5Zjd4b2lzamNjeQ=="
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="transition-transform hover:scale-110"
                     aria-label="Instagram"
                   >
