@@ -1,45 +1,35 @@
 import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
-import { Loading } from "../../components/Loading";
-import { Typewriter } from "react-simple-typewriter";
 import { ArrowBigDown } from "lucide-react";
-import { Header } from "../../components/Header";
-import { Footer } from "../../components/Footer";
+import { Typewriter } from "react-simple-typewriter";
 import { Card } from "../../components/Card";
 import { CardOpinion } from "../../components/Card/Opinion";
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+import { Loading } from "../../components/Loading";
+import { ContactForm } from "../../components/ContactForm/Index";
+import { Partner } from "../../components/Card/Partners";
+import { WhatsApp } from "../../components/Button/WhatsApp";
 
 export const Home = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLoading(false);
-    }, 5500);
+      setLoading(false); // desativar tela de loading
+    }, 5000); // cinco segundos
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
+  if (loading) return <Loading />;
 
   return (
     <Fragment>
-      <div className="fixed bottom-4 right-4 z-[9999] md:bottom-6 md:right-6">
-        <a
-          id="robbu-whatsapp-button"
-          target="_blank"
-          href="https://api.whatsapp.com/send?phone=5511000000000&text=Olá!%20Quero%20solicitar%20um%20orçamento."
-          className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl md:h-16 md:w-16"
-        >
-          <svg className="h-6 w-6 text-white md:h-8 md:w-8" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
-          </svg>
-        </a>
-      </div>
+      <WhatsApp />
 
-      {/* Home */}
+      {/* Seção Home */}
       <main className="flex min-h-screen flex-col bg-[url('/main.jpg')] bg-cover bg-center bg-no-repeat">
         <Header />
 
@@ -100,7 +90,6 @@ export const Home = () => {
           <div className="mx-auto mt-4 h-1 w-full rounded-full bg-gradient-to-r from-[#ffffff] to-red-100"></div>
         </h1>
 
-        {/* mx-auto grid max-w-6xl grid-cols-3 gap-6 lg:flex lg:flex-col */}
         <div className="mx-auto max-w-6xl px-4">
           <div className="divide-y divide-white/20 md:grid md:grid-cols-3 md:gap-12 md:divide-x md:divide-y-0">
             <div className="pb-8 md:pb-0">
@@ -132,8 +121,8 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Seção Respiro */}
-      <section className="relative flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-center bg-no-repeat bg-scroll lg:bg-fixed">
+      {/* Seção Sobre o Trabalho */}
+      <section className="relative flex min-h-screen w-full flex-col justify-end bg-[url('/hero.jpg')] bg-cover bg-scroll bg-center bg-no-repeat lg:bg-fixed">
         <div className="absolute inset-0 bg-black/40"></div>
 
         <div className="relative z-10 mx-auto max-w-6xl px-4 pb-20 lg:px-8">
@@ -148,8 +137,7 @@ export const Home = () => {
         </div>
       </section>
 
-
-      {/* Seção Trabalhos */}
+      {/* Seção de Trabalho Realizados */}
       <section id="trabalhos" className="flex min-h-screen w-full flex-col bg-[#0C0C08] py-[80px]">
         <div className="mb-12 text-center">
           <h1 className="mb-4 text-3xl font-bold md:text-6xl lg:text-5xl">Trabalhos Concluídos</h1>
@@ -178,39 +166,31 @@ export const Home = () => {
             içamento seguro do início ao fim."
           />
         </div>
-
-        {/* <Card /> */}
-        {/* <Card /> */}
       </section>
 
-      {/* Seção Parceiros */}
+      {/* Seção de Parceiros */}
       <section
         id="parceiros"
-        className="relative flex min-h-screen w-full flex-col justify-end overflow-hidden bg-[#0C0C08] bg-gradient-to-b from-[#0C0C08] via-[#0C0C08] to-[#090909] bg-cover bg-center bg-no-repeat bg-scroll lg:bg-fixed py-[120px]"
+        className="relative flex min-h-screen w-full flex-col justify-end overflow-hidden bg-[#0C0C08] bg-gradient-to-b from-[#0C0C08] via-[#0C0C08] to-[#090909] bg-cover bg-scroll bg-center bg-no-repeat py-[120px] lg:bg-fixed"
       >
-        {/* Imagem de fundo sutil */}
         <img
           src="/parceiros.jpg"
           alt="Fundo decorativo"
           className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-10"
         />
 
-        {/* Luz de fundo sutil */}
         <span className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] px-2">
-          {/* Título */}
           <h2 className="mb-4 text-center text-3xl font-bold md:text-6xl lg:text-5xl">
             Empresas Parceiras
           </h2>
 
-          {/* Subtítulo */}
           <p className="mx-auto mt-6 max-w-xl px-4 text-center text-sm text-white/60 lg:text-2xl">
             Parcerias construídas com base em segurança, precisão e compromisso em cada operação
             realizada.
           </p>
 
-          {/* Texto de autoridade */}
           <p className="mx-auto mt-12 max-w-4xl px-4 text-center text-sm leading-relaxed text-white/70 lg:text-lg lg:leading-relaxed">
             Atuamos ao lado de empresas dos mais diversos segmentos, como{" "}
             <span className="font-semibold text-white">
@@ -221,51 +201,15 @@ export const Home = () => {
             e muitos outros parceiros que confiam no nosso trabalho diariamente.
           </p>
 
-          {/* Grid de parceiros */}
           <div className="mt-24 grid grid-cols-2 items-center justify-center gap-14 sm:grid-cols-3 md:grid-cols-4">
-            <a href="https://www.micasa.com.br/" target="_blank" rel="noopener noreferrer">
-              <div className="group flex h-[160px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 ease-out hover:border-white/30 hover:bg-white/[0.12] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
-                <img
-                  src="/micasa.png"
-                  alt="MiCasa"
-                  className="max-h-[72px] contrast-110 brightness-110 transition-all duration-300 group-hover:scale-105"
-                />
-              </div>
-            </a>
-
-            <a href="https://www.bazzimoveis.com.br/" target="_blank" rel="noopener noreferrer">
-              <div className="group flex h-[160px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
-                <img
-                  src="/bazzy.png"
-                  alt="Bazzi Móveis"
-                  className="max-h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-            </a>
-
-            <a href="https://www.limamudancas.com.br/" target="_blank" rel="noopener noreferrer">
-              <div className="group flex h-[160px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
-                <img
-                  src="/lima.png"
-                  alt="Lima Mudança"
-                  className="max-h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-            </a>
-
-            <a
-              href="https://www.rochamachadoengenharia.com.br/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="group flex h-[160px] items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/[0.12] hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]">
-                <img
-                  src="/rocha_machado.png"
-                  alt="Rocha Machado Engenharia"
-                  className="max-h-[72px] object-contain transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-            </a>
+            <Partner link="https://www.micasa.com.br/" img="/bazzy.png" alt="MiCasa" />
+            <Partner link="https://www.bazzimoveis.com.br/" img="/micasa.png" alt="Bazzi Móveis" />
+            <Partner link="https://www.limamudancas.com.br/" img="/lima.png" alt="Lima Mudança" />
+            <Partner
+              link="https://www.rochamachadoengenharia.com.br/"
+              img="/rocha_machado.png"
+              alt="Rocha Machado Engenharia"
+            />
           </div>
 
           <span className="mt-16 block text-center text-sm uppercase tracking-widest text-white/40">
@@ -276,11 +220,10 @@ export const Home = () => {
         </div>
       </section>
 
-
-      {/* Seção Sobre */}
+      {/* Seção sobre as Operações */}
       <section
         id="sobre"
-        className="flex min-h-screen w-full flex-col justify-end bg-[url('/Sobre.jpg')] bg-cover bg-center bg-no-repeat bg-scroll lg:bg-fixed pb-[80px] px-6 lg:pl-[80px] lg:pr-12"
+        className="flex min-h-screen w-full flex-col justify-end bg-[url('/Sobre.jpg')] bg-cover bg-scroll bg-center bg-no-repeat px-6 pb-[80px] lg:bg-fixed lg:pl-[80px] lg:pr-12"
       >
         <div>
           <h1 className="mb-6 text-2xl font-medium leading-tight text-white lg:text-5xl lg:leading-tight">
@@ -289,9 +232,9 @@ export const Home = () => {
           </h1>
 
           <p className="max-w-3xl pb-6 text-sm leading-relaxed text-white/90 lg:text-xl lg:leading-relaxed">
-            Executamos içamentos com planejamento técnico e total cuidado com o ambiente,
-            utilizando estruturas que protegem paredes, janelas e pisos. Atuamos com
-            responsabilidade, precisão e respeito ao seu patrimônio.
+            Executamos içamentos com planejamento técnico e total cuidado com o ambiente, utilizando
+            estruturas que protegem paredes, janelas e pisos. Atuamos com responsabilidade, precisão
+            e respeito ao seu patrimônio.
           </p>
 
           <p className="mt-2 text-sm text-white/70 lg:text-base">
@@ -305,13 +248,10 @@ export const Home = () => {
               </button>
             </a>
           </div>
-
-
-
         </div>
       </section>
 
-
+      {/* Seção de Feedback dos Clientes */}
       <section id="feedbacks" className="bg-[#0C0C08] py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="mb-16 text-center">
@@ -347,145 +287,14 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Seção Contato */}
+      {/* Seção de Contato */}
       <section
         id="contato"
         className="relative min-h-[calc(100vh-80px)] w-full bg-[url('/logo-cntt.jpeg')] bg-cover bg-center bg-no-repeat py-20"
       >
-        {/* Overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-[#0C0C08]"></div>
-
-        {/* Conteúdo */}
-        <div className="container relative z-10 mx-auto flex flex-col gap-10 px-4 py-10 lg:flex-row">
-          {/* Coluna lateral — logo primeiro no mobile */}
-          <div className="flex w-full flex-col gap-8 lg:w-1/2">
-            {/* Logo da empresa */}
-            <div className="group overflow-hidden rounded-2xl shadow-md transition duration-500 hover:shadow-lg">
-              <img
-                src="/logo-cntt.jpeg"
-                alt="Torres Içamentos"
-                className="h-96 w-full max-w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
-              />
-            </div>
-
-            {/* Card informações */}
-            <div className="w-full rounded-2xl bg-white p-6 shadow-md transition duration-500 hover:shadow-lg">
-              <div className="flex flex-col gap-4">
-                {[
-                  {
-                    icon: "https://img.icons8.com/?size=100&id=12580&format=png&color=000000",
-                    label: "Email",
-                    value: "torresicamentos@gmail.com",
-                    href: "mailto:torresicamentos@gmail.com",
-                  },
-                  {
-                    icon: "https://img.icons8.com/?size=100&id=9660&format=png&color=000000",
-                    label: "Telefone",
-                    value: "5925-4049",
-                    href: "tel:59254049",
-                  },
-                  {
-                    icon: "https://img.icons8.com/?size=100&id=16712&format=png&color=000000",
-                    label: "WhatsApp",
-                    value: "(11) 94719-6430",
-                    href: "https://wa.me/5511947196430",
-                  },
-                ].map((item, i) => (
-                  <a
-                    key={i}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 rounded-xl bg-[#FAFAFA] p-4 transition duration-300 hover:scale-105 hover:bg-[#F2F2F2]"
-                  >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white shadow-sm">
-                      <img src={item.icon} alt={item.label} className="h-6 w-6" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium text-gray-500">{item.label}</p>
-                      <p className="text-sm font-semibold text-black">{item.value}</p>
-                    </div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Card formulário */}
-          <div className="flex w-full flex-col gap-6 rounded-2xl bg-white p-8 shadow-md transition duration-500 hover:shadow-lg lg:w-1/2">
-            <h1 className="text-2xl font-bold text-black lg:text-5xl">
-              Entre em contato com a equipe da Torres Içamentos
-            </h1>
-            <p className="text-sm text-[#343434] lg:text-lg">
-              Solicite informações ou orçamentos com nossa equipe especializada.
-            </p>
-            <hr className="mb-4 h-px w-full border-0 bg-[#343434]" />
-
-            {/* Campos */}
-            <div className="flex flex-col gap-4 md:flex-row">
-              <div className="flex flex-col gap-2 md:w-1/2">
-                <label htmlFor="nome" className="text-sm font-semibold text-black">
-                  Nome
-                </label>
-                <input
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  placeholder="Ex: José"
-                  className="h-11 w-full rounded-xl border border-gray-300 px-4 text-sm text-black transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
-                  required
-                />
-              </div>
-              <div className="flex flex-col gap-2 md:w-1/2">
-                <label htmlFor="sobrenome" className="text-sm font-semibold text-black">
-                  Sobrenome
-                </label>
-                <input
-                  type="text"
-                  id="sobrenome"
-                  name="sobrenome"
-                  placeholder="Ex: Silva"
-                  className="h-11 w-full rounded-xl border border-gray-300 px-4 text-sm text-black transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
-                  required
-                />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-sm font-semibold text-black">
-                E-mail
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="exemplo@dominio.com"
-                className="h-11 w-full rounded-xl border border-gray-300 px-4 text-sm text-black transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
-                required
-              />
-            </div>
-
-            <div className="flex flex-col gap-2">
-              <label htmlFor="mensagem" className="text-sm font-semibold text-black">
-                Mensagem
-              </label>
-              <textarea
-                id="mensagem"
-                name="mensagem"
-                placeholder="Digite sua mensagem"
-                rows={4}
-                className="resize-none rounded-xl border border-gray-300 px-4 py-3 text-sm text-black transition focus:border-red-600 focus:outline-none focus:ring-2 focus:ring-red-300"
-                required
-              />
-            </div>
-
-            {/* Botão enviar */}
-            <button className="mt-4 w-full rounded-xl bg-red-600 py-3 font-semibold text-white transition duration-300 hover:scale-105 hover:bg-red-700">
-              Enviar
-            </button>
-          </div>
-        </div>
+        <ContactForm />
       </section>
+
       <Footer />
     </Fragment>
   );

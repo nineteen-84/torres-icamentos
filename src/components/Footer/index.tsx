@@ -29,7 +29,8 @@ export const Footer = () => {
 
                 <p className="flex items-start gap-2">
                   <span>
-                    Atendimento de segunda a sexta-feira<br />
+                    Atendimento de segunda a sexta-feira
+                    <br />
                     08:30 às 12:00 • 13:00 às 17:30
                   </span>
                 </p>
