@@ -146,21 +146,21 @@ export const Home = () => {
 
         <div className="flex flex-wrap justify-center gap-10">
           <Card
-            img="public/Trabalhos-1.jpg"
+            img="/Trabalhos-1.jpg"
             title="Tampo de Mesa"
             desc="13º andar — içamento técnico com estrutura de madeira reforçada e mantas de proteção,
             garantindo total integridade do material durante a operação."
           />
 
           <Card
-            img="public/Trabalhos-2.jpg"
+            img="/Trabalhos-2.jpg"
             title="Içamento de Móvel Embalado"
             desc="Volume embalado e protegido sendo içado com cabos de aço, garantindo a movimentação
             segura em área residencial com acesso restrito."
           />
 
           <Card
-            img="public/Equipe.jpg"
+            img="/Equipe.jpg"
             title="Equipe em operação"
             desc="Registro da equipe conduzindo o equipamento com precisão e cuidado, garantindo um
             içamento seguro do início ao fim."
