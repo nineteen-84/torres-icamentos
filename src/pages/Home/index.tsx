@@ -11,9 +11,23 @@ import { Loading } from "../../components/Loading";
 import { ContactForm } from "../../components/ContactForm/Index";
 import { Partner } from "../../components/Card/Partners";
 import { WhatsApp } from "../../components/Button/WhatsApp";
+import Lenis from "@studio-freight/lenis";
 
 export const Home = () => {
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -30,7 +44,10 @@ export const Home = () => {
       <WhatsApp />
 
       {/* Seção Home */}
-      <main className="flex min-h-screen flex-col bg-[url('/main.jpg')] bg-cover bg-center bg-no-repeat">
+      <main
+        id="home"
+        className="flex min-h-screen flex-col bg-[url('/main.jpg')] bg-cover bg-center bg-no-repeat"
+      >
         <Header />
 
         <div className="flex flex-1 flex-col items-center justify-center gap-10 bg-gradient-to-t from-black/80 via-black/40 px-6 text-center">

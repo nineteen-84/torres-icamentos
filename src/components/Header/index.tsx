@@ -1,13 +1,16 @@
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
+import { Link } from "react-scroll";
+
 export const Header = () => {
   const [open, setOpen] = useState(false);
+  const optionsMenu = ["Home", "Trabalhos", "Parceiros", "Sobre", "Contato"];
 
   return (
     <header className="relative mx-6 mt-6 lg:mx-0 lg:mt-0 lg:flex lg:justify-center lg:p-8">
       <div className="flex items-center justify-between lg:hidden">
-        <img className="h-12 rounded-lg border border-gray-600" src="logo.png" alt="Logo" />
+        <img className="h-12 rounded-lg border border-gray-600" src="/logo.png" alt="Logo" />
 
         <button
           onClick={() => setOpen(!open)}
@@ -22,15 +25,17 @@ export const Header = () => {
       <nav
         className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-10 bg-black/95 transition-all duration-300 ${open ? "opacity-100" : "pointer-events-none opacity-0"} lg:pointer-events-auto lg:static lg:z-auto lg:flex lg:flex-row lg:gap-10 lg:bg-transparent lg:opacity-100`}
       >
-        {["Trabalhos", "Parceiros", "Sobre", "Contato"].map((item) => (
-          <a
+        {optionsMenu.map((item) => (
+          <Link
             key={item}
-            href={`#${item.toLowerCase()}`}
+            to={item.toLowerCase()}
+            smooth={true}
+            duration={1000}
             onClick={() => setOpen(false)}
-            className="w-28 rounded-full px-4 py-2 text-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:shadow-md lg:w-auto"
+            className="w-28 cursor-pointer rounded-full px-4 py-2 text-center text-white transition-all duration-300 hover:bg-white hover:text-black hover:shadow-md lg:w-auto"
           >
             {item}
-          </a>
+          </Link>
         ))}
 
         <a

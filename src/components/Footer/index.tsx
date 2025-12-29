@@ -4,7 +4,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 pb-10 pt-10 md:px-[60px]">
         <div className="mt-24 flex flex-col items-center gap-12 md:flex-row md:gap-[200px]">
           <div className="shrink-0">
-            <img src="logo.png" alt="Torres Içamentos Logo" className="max-w-[200px]" />
+            <img src="/logo.png" alt="Torres Içamentos Logo" className="max-w-[200px]" />
           </div>
 
           <div className="grid w-full grid-cols-1 gap-12 md:grid-cols-3 md:gap-20">
